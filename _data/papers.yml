@@ -1,0 +1,96 @@
+categories:
+- heading: Published
+  pubs:
+  - title: 'Changes in Cigarette Consumption With Reduced Nicotine Content Cigarettes
+      Among Smokers With Psychiatric Conditions or Socioeconomic Disadvantage: 3 Randomized
+      Clinical Trials'
+    author:
+    - Higgins, Stephen T.
+    - Tidey, Jennifer W.
+    - Sigmon, Stacey C.
+    - Heil, Sarah H.
+    - Gaalema, Diann E.
+    - Lee, Dustin
+    - Hughes, John R.
+    - Villanti, Andrea C.
+    - Bunn, Janice Y.
+    - Davis, Danielle R.
+    - Bergeria, Cecilia L.
+    - Streck, Joanna M.
+    - Parker, Maria A.
+    - Miller, Mollie E.
+    - DeSarno, Michael
+    - Priest, Jeff S.
+    - Cioe, Patricia
+    - MacLeod, Douglas
+    - Barrows, Anthony
+    - Markesich, Catherine
+    - Harfmann, Roxanne F.
+    year: 2020
+    month: October
+    journal: JAMA Network Open
+    url: http://dx.doi.org/10.1001/jamanetworkopen.2020.19311
+    volume: 3
+    number: 10
+    image_path: /assets/images/figures/HiTi20.jpg
+  - title: Comparing participant estimated demand intensity on the cigarette Purchase
+      Task to consumption when usual-brand cigarettes were provided free
+    author:
+    - Tyler D. Nighbor
+    - Anthony J. Barrows
+    - Janice Y. Bunn
+    - Michael J. DeSarno
+    - Anthony C. Oliver
+    - Sulamunn R.M. Coleman
+    - Danielle R. Davis
+    - Joanna M. Streck
+    - Ellaina N. Reed
+    - Derek D. Reed
+    - Stephen T. Higgins
+    year: 2020
+    journal: Preventive Medicine
+    url: https://www.sciencedirect.com/science/article/pii/S0091743520302450
+    volume: 140
+    image_path: /assets/images/figures/TyAn20.jpg
+  - title: The Impact of the Covid-19 Pandemic on Smoking Among Vulnerable Populations
+    author:
+    - Wiley, Rhiannon C
+    - Oliver, Anthony C
+    - Snow, Miranda B
+    - Bunn, Janice Y
+    - Barrows, Anthony J
+    - Tidey, Jennifer W
+    - Lee, Dustin C
+    - Sigmon, Stacey C
+    - Gaalema, Diann E
+    - Heil, Sarah H
+    - Markesich, Catherine
+    - Villanti, Andrea C
+    - Higgins, Stephen T
+    year: 2022
+    month: May
+    journal: Nicotine    amp; Tobacco Research
+    url: http://dx.doi.org/10.1093/ntr/ntac135
+    volume: 25
+    number: 2
+    image_path: /assets/images/figures/WiOl22.jpg
+  - title: Reduced Nicotine Content Cigarettes and Cannabis Use in Vulnerable Populations
+    author:
+    - Parker, Maria A.
+    - Streck, Joanna M.
+    - Bergeria, Cecilia L.
+    - Bunn, Janice Y.
+    - Galeema, Diann E.
+    - Davis, Danielle R.
+    - Barrows, Anthony J.
+    - Sigmon, Stacey C.
+    - Tidey, Jennifer W.
+    - Heil, Sarah H.
+    - Higgins, Stephen T.
+    year: 2018
+    month: September
+    journal: Tobacco Regulatory Science
+    url: http://dx.doi.org/10.18001/TRS.4.5.8
+    volume: 4
+    number: 5
+    image_path: /assets/images/figures/PaSt18.jpg

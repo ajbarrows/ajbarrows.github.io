@@ -1,0 +1,77 @@
+---
+title: "Making Personal Websites"
+subtitle: "A messy introduction"
+author: "Tony Barrows"
+format:
+  revealjs: 
+    transition: slide
+    incremental: true
+    slide-number: true
+    chalkboard: 
+      buttons: false
+    preview-links: auto
+    logo: figures/graphics/UVM_Logo_Primary_Horiz_G.svg
+resources:
+  - demo.pdf
+---
+
+### We'll try to cover
+
+:::{layout-nrow=2}
+![](figures/jekyll.png)
+
+![](figures/jekyll_themes.png)
+
+![](figures/github_pages.png)
+
+![](figures/uvm_silk.png){width=50%}
+:::
+
+
+## Disclaimer
+
+![](figures/no_idea.gif){width=50%, fig-align="center"}
+
+
+## Disclaimer
+
+:::: {.columns}
+
+::: {.column width="33%"}
+::: {.fragment width="33%"}
+Assuming
+
+![](figures/apple.svg){width="50%"}
+:::
+
+::: {.fragment width="33%"}
+Or
+
+![](figures/Tux.svg.png){width="50%"}
+:::
+:::
+
+::: {.column width="33%"}
+::: {.fragment width="33%"}
+Not
+
+![](figures/windows.png){width=50% fig-align="center"}
+:::
+:::
+
+::: {.column width="33%"}
+::: {.fragment width="33%"}
+Possibly
+
+![](figures/wsl.jpeg){width="75%"}
+:::
+
+::: {.fragment width="33%"}
+But that always seems like
+
+![](figures/cart_before_horse.gif)
+:::
+:::
+
+::::
+
