@@ -2,6 +2,8 @@
 main:
   - title: "Papers"
     url: /papers/
+  - title: "Projects"
+    url: /projects/
   # - title: "Sample Collections"
   #   url: /collection-archive/
   # - title: "Sitemap"
