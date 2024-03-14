@@ -259,7 +259,11 @@ Save and run `bundle exec jekyll serve`.
 
 ### Data Files
 
-Create the file `_data/navigation.yml` and add
+Create the file 
+
+```
+_data/navigation.yml
+``` 
 
 ```default
 - name: Home
@@ -268,13 +272,20 @@ Create the file `_data/navigation.yml` and add
   link: /about.html
 ```
 
+and add
+
 ## {auto-animate="true"}
 
 [![](figures/jekyll.png){width="25%"}](https://jekyllrb.com)
 
 ### Data Files
 
-And then create the file `_includes/navigation.html` and add
+And then create the file 
+
+```
+_includes/navigation.html
+``` 
+and add
 
 ```default {code-line-numbers=|2|3|4}
 <nav>
@@ -287,6 +298,8 @@ And then create the file `_includes/navigation.html` and add
 ```
 
 
+
+
 ## {auto-animate="true"}
 
 [![](figures/jekyll.png){width="25%"}](https://jekyllrb.com)
@@ -317,7 +330,7 @@ title: Happy Little Trees
 
 Now pop back to `_layouts/home.html` and add our navigation bar:
 
-```{default}
+```default
 ---
 title: Happy Little Trees
 ---
@@ -329,10 +342,15 @@ title: Happy Little Trees
     <h1>{{page.title}}</h1>
   </head>
   <body>
-      {% include navigation.html %}
+      {% raw %}{% include navigation.html %}{% endraw %}
   </body>
 </html>
 ```
+
+```
+
+```
+
 
 ## 
 
