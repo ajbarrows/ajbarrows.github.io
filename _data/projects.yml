@@ -1,0 +1,18 @@
+proj:
+  - title: Personal Website Presentation
+    embed: True
+    embed_url: https://ajbarrow.w3.uvm.edu/assets/public_share/website-demo/#/title-slide
+    links:
+      - name: GitHub
+        url: https://github.com/ajbarrows/ajbarrows.github.io
+    image_path:
+  - title: Personal Website
+    embed: False
+    embed_url:
+    primary_url: https://ajbarrow.w3.uvm.edu
+    links:
+      - name: Website
+        url: https://ajbarrow.w3.uvm.edu
+      - name: GitHub
+        url: https://github.com/ajbarrows/ajbarrows.github.io
+    image_path: /assets/images/web_img.png

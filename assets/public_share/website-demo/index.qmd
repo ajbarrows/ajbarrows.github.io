@@ -6,6 +6,7 @@ format:
   revealjs: 
     transition: slide
     incremental: true
+    auto-stretch: false
     slide-number: true
     chalkboard: 
       buttons: false
@@ -74,4 +75,446 @@ But that always seems like
 :::
 
 ::::
+
+# Jekyll
+Follow along:
+
+ajbarrow.w3.uvm.edu
+
+![](figures/myweb.svg){width="25%"}
+
+
+##
+
+[![](figures/jekyll.png){width="25%"}](https://jekyllrb.com)
+
+- Written in Ruby
+- Is the underpinning of [GitHub Pages](https://pages.github.com)
+- Renders Markdown and Liquid [^1] templates
+- Uses YAML syntax files instead of databases
+
+
+[^1]: Developed by [Shopify](https://shopify.github.io/liquid/), incidentally
+
+##
+[![](figures/jekyll.png){width="25%"}](https://jekyllrb.com)
+
+First: Install prerequisites ([https://jekyllrb.com/docs/installation/](https://jekyllrb.com/docs/installation/))
+
+<br>
+
+  ```{.zsh code-line-numbers="1|2|3|4"}
+    gem install
+    jekyll new mysite
+    cd mysite
+    bundle exec jekyll serve
+  ```
+<br>
+Visit your new website at [http://localhost:4000](http://localhost:4000)
+
+## {auto-animate="true"}
+[![](figures/jekyll.png){width="25%"}](https://jekyllrb.com)
+
+```{.zsh code-line-numbers=|7}
+mysite
+├── 404.html
+├── Gemfile
+├── Gemfile.lock
+├── _config.yml
+├── _posts
+├── _site
+├── about.markdown
+└── index.markdown
+```
+
+## {auto-animate="true"}
+[![](figures/jekyll.png){width="25%"}](https://jekyllrb.com)
+
+```{.zsh}
+mysite
+├── 404.html
+├── Gemfile
+├── Gemfile.lock
+├── _config.yml
+├── _posts
+├── _site
+  ├── 404.html
+  ├── about
+  │   └── index.html
+  ├── assets
+  │   ├── main.css
+  │   ├── main.css.map
+  │   └── minima-social-icons.svg
+  ├── feed.xml
+  ├── index.html
+  └── jekyll
+      └── update
+├── about.markdown
+└── index.markdown
+```
+
+## {auto-animate="true"}
+[![](figures/jekyll.png){width="25%"}](https://jekyllrb.com)
+
+```{.zsh code-line-numbers=5|8-9}
+mysite
+├── 404.html
+├── Gemfile
+├── Gemfile.lock
+├── _config.yml
+├── _posts
+├── _site
+├── about.markdown
+└── index.markdown
+```
+
+##
+[![](figures/jekyll.png){width="25%"}](https://jekyllrb.com)
+
+### Basic concepts:
+
+- Front matter tells Jekyll to render Liquid
+
+::: {.fragment}
+```default
+---
+title: Happy Little Trees
+---
+```
+
+Liquid:
+
+```default
+{{page.title}}
+```
+:::
+
+##
+
+[![](figures/jekyll.png){width="25%"}](https://jekyllrb.com)
+
+### Layouts
+Say we want a template that displays the page's title. We might write HTML like this:
+
+```default{code-line-numbers=|9}
+---
+title: Happy Little Trees
+---
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <h1>{{page.title}}</h1>
+  </head>
+  <body>
+  </body>
+</html>
+```
+::: {.fragment}
+Save this file as `mysite/_layouts/home.html`
+:::
+
+## {auto-animate="true"}
+
+[![](figures/jekyll.png){width="25%"}](https://jekyllrb.com)
+
+
+We've just created a template for our home page. Now let's find a way to reference and display it. 
+
+Open `index.markdown` and notice the front matter. Add a title:
+
+```default
+---
+# Feel free to add content and custom Front Matter to this file.
+# To modify the layout, see https://jekyllrb.com/docs/themes/#overriding-theme-defaults
+
+layout: home
+---
+```
+
+## {auto-animate="true"}
+
+[![](figures/jekyll.png){width="25%"}](https://jekyllrb.com)
+
+
+We've just created a template for our home page. Now let's find a way to reference and display it. 
+
+Open `index.markdown` and notice the front matter. Add a title:
+
+```default
+---
+title: Happy Little Trees
+layout: home
+---
+```
+
+::: {.fragment}
+Save and run `bundle exec jekyll serve`.
+:::
+
+## {auto-animate="true"}
+
+[![](figures/jekyll.png){width="25%"}](https://jekyllrb.com)
+
+### Data Files
+
+Create the file `_data/navigation.yml` and add
+
+```default
+- name: Home
+  link: /
+- name: About
+  link: /about.html
+```
+
+## {auto-animate="true"}
+
+[![](figures/jekyll.png){width="25%"}](https://jekyllrb.com)
+
+### Data Files
+
+And then create the file `_includes/navigation.html` and add
+
+```default {code-line-numbers=|2|3|4}
+<nav>
+  {% for item in site.data.navigation %}
+    <a href="{{ item.link }}" {% if page.url == item.link %}style="color: red;"{% endif %}>
+      {{ item.name }}
+    </a>
+  {% endfor %}
+</nav>
+```
+
+
+## {auto-animate="true"}
+
+[![](figures/jekyll.png){width="25%"}](https://jekyllrb.com)
+
+
+Now pop back to `_layouts/home.html` and add our navigation bar:
+
+
+```default
+---
+title: Happy Little Trees
+---
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <h1>{{page.title}}</h1>
+  </head>
+  <body>
+  </body>
+</html>
+```
+
+## {auto-animate="true"}
+
+[![](figures/jekyll.png){width="25%"}](https://jekyllrb.com)
+
+Now pop back to `_layouts/home.html` and add our navigation bar:
+
+```{default}
+---
+title: Happy Little Trees
+---
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <h1>{{page.title}}</h1>
+  </head>
+  <body>
+      {% include navigation.html %}
+  </body>
+</html>
+```
+
+## 
+
+[![](figures/jekyll.png){width="25%"}](https://jekyllrb.com)
+
+I strongly suggest following Jekyll's [step by step tutorial](https://jekyllrb.com/docs/step-by-step/01-setup/). 
+
+You'll need to apply:
+
+- Cascading Style Sheets (CSS)
+- Actual content
+
+::: {.fragment}
+Alternatively:
+
+![](figures/jekyll_themes.png){width="20%"}
+:::
+
+##
+
+![](figures/jekyll_themes.png){width="20%"}
+
+My own website is based on [Minimal Mistakes](https://mmistakes.github.io/minimal-mistakes/)
+
+There are (at least) two wasy to apply a theme:
+
+- As a Ruby Gem by adding (for example) to your site's `Gemfile`[^2]:
+
+::: {.fragment}
+```default
+gem "minimal-mistakes-jekyll"
+```
+:::
+
+[^2]: If you want to use GitHub Pages, set this up as a [remote theme](https://github.com/benbalter/jekyll-remote-theme)
+
+##
+
+and 
+
+```default
+theme: minimal-mistakes-jekyll
+```
+
+to your site's `_config.yml` file
+
+::: {.fragment}
+Or you could just fork the theme (template) repository:
+
+```default
+https://github.com/mmistakes/minimal-mistakes.git
+```
+:::
+
+##
+
+![](figures/jekyll_themes.png){width="20%"}
+
+That will give you something like this:
+
+```default
+mmistakes
+├── Gemfile
+├── Gemfile.lock
+├── README.md
+├── _authors
+├── _config.yml
+├── _data
+├── _includes
+├── _layouts
+├── _posts
+├── _sass
+├── _site
+├── about.md
+├── assets
+├── index.html
+└── minimal-mistakes-jekyll.gemspec
+```
+
+
+# Hosting
+
+![](figures/github_pages.png){width="20%"}
+![](figures/uvm_silk.png){width="20%"}
+
+
+
+##
+
+![](figures/github_pages.png){width="200px"}
+
+### Briefly:
+
+::: {.fragment}
+Make a repository called:
+
+```default
+<github-user-name>.github.io
+```
+:::
+
+::: {.fragment}
+
+[Follow these instructions](https://docs.github.com/en/pages/getting-started-with-github-pages/configuring-a-publishing-source-for-your-github-pages-site)
+:::
+
+
+::: {.fragment}
+Commit your Jekyll website to this repository and push.
+:::
+
+##
+![](figures/uvm_silk.png){width="20%"}
+
+- Silk is UVM's webhosting service available to UVM affiliates
+- It's essentially an interface to an `Apache HTTP Server`
+- Configuration settings are already straightened out
+
+##
+
+![](figures/uvm_silk.png){width="20%"}
+
+- Silk won't build your Jekyll site
+- Note the folder that appeared:
+
+::: {.fragment}
+
+```default {code-line-numbers=10}
+mysite
+├── 404.html
+├── Gemfile
+├── Gemfile.lock
+├── _config.yml
+├── _data
+├── _includes
+├── _layouts
+├── _posts
+├── _site
+├── about.markdown
+└── index.markdown
+```
+:::
+
+##
+
+![](figures/uvm_silk.png){width="20%"}
+
+Procedure:
+
+::: {.fragment}
+Build your site
+
+  ```
+  bundle exec jekyll build
+  ```
+:::
+
+::: {.fragment}
+Copy the contents of `_site/` to your `~/www-root` directory
+
+  ```
+  cd mysite
+  rsync -avz ./site/ <netid>.w3.uvm.edu:www-root
+  ```
+:::
+
+::: {.fragment}
+Navigate to [`<netid>.w3.uvm.edu`](ajbarrow.w3.uvm.edu)
+:::
+
+
+## Questions?
+
+
+What's next? Does anything work?
+
+
+
+
+
+
+
+
+
 
