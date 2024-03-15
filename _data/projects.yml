@@ -16,3 +16,6 @@ proj:
       - name: GitHub
         url: https://github.com/ajbarrows/ajbarrows.github.io
     image_path: /assets/images/web_img.png
+  - title: Literature Reviews Presentation
+    embed: True
+    embed_url: https://ajbarrow.w3.uvm.edu/assets/public_share/literature-review/#/title-slide
