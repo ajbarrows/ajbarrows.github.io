@@ -6,15 +6,15 @@ proj:
       - name: GitHub
         url: https://github.com/ajbarrows/ajbarrows.github.io
     image_path:
-  - title: Personal Website
-    embed: False
-    embed_url:
-    primary_url: https://ajbarrow.w3.uvm.edu
-    links:
-      - name: Website
-        url: https://ajbarrow.w3.uvm.edu
-      - name: GitHub
-        url: https://github.com/ajbarrows/ajbarrows.github.io
+  # - title: Personal Website
+  #   embed: False
+  #   embed_url:
+  #   primary_url: https://ajbarrow.w3.uvm.edu
+  #   links:
+  #     - name: Website
+  #       url: https://ajbarrow.w3.uvm.edu
+  #     - name: GitHub
+  #       url: https://github.com/ajbarrows/ajbarrows.github.io
     image_path: /assets/images/web_img.png
   - title: Literature Reviews Presentation
     embed: True
