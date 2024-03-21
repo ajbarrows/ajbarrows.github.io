@@ -4,6 +4,8 @@ main:
     url: /papers/
   - title: "Projects"
     url: /projects/
+  - title: "Music"
+    url: /music/
   # - title: "Sample Collections"
   #   url: /collection-archive/
   # - title: "Sitemap"
