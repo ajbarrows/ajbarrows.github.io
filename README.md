@@ -10,7 +10,7 @@ A modern, responsive portfolio website built with Astro, featuring multiple page
 
 You can preview the project online at:
 
-<https://astro-multiplepage-portfolio.edgeone.app/>
+<https://astro-multiplepage-portfolio-blush.vercel.app/>
 
 ## Features
 
