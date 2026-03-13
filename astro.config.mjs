@@ -1,14 +1,10 @@
 import { defineConfig } from 'astro/config';
 import tailwind from '@astrojs/tailwind';
-import edgeone from '@edgeone/astro';
+import vercel from '@astrojs/vercel/serverless';
 
 // https://astro.build/config
 export default defineConfig({
-  /*
-  Currently it is deployed on Tencent Cloud EdgeOne, on an Asia-based Pages platform (the author is also based in Asia). 
-  If users require, they can switch to Vercel or another Pages platform themselves.
-  */
-  adapter: edgeone(),
+  adapter: vercel(),
   integrations: [tailwind()],
   server: {
     port: 4321,

@@ -4,7 +4,7 @@ A modern, responsive portfolio website built with Astro, featuring multiple page
 
 ## Quick Deploy
 
-[![Deploy to Tencent Cloud](https://cdnstatic.tencentcs.com/edgeone/pages/deploy.svg)](https://edgeone.ai/pages/new?template=https://github.com/tomcomtang/astro-multiplepage-portfolio&output-directory=./dist&build-command=npm%20run%20build&install-command=npm%20install&entry_from=childtom)
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/tomcomtang/astro-multiplepage-portfolio&project-name=astro-multiplepage-portfolio&repository-name=astro-multiplepage-portfolio)
 
 ## Preview
 
