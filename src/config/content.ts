@@ -88,6 +88,16 @@ export const aboutContent = {
   },
 };
 
+export const projectsContent = {
+  meta: {
+    title: "Projects - Tony Barrows",
+    description: "Research projects and software by Tony Barrows.",
+  },
+  title: "Projects",
+  description: "A selection of research projects and open-source software.",
+  projects: [] as Array<{ title: string; description: string; href: string; image: string }>,
+};
+
 export const musicContent = {
   meta: {
     title: "Music - Tony Barrows",
