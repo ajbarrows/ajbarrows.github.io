@@ -14,7 +14,7 @@ import { aboutContent } from "../config/content.ts";
     <meta name="description" content={aboutContent.meta.description} />
     <script is:inline>
       (function () {
-        const savedTheme = localStorage.getItem("theme") || "dark";
+        const savedTheme = localStorage.getItem("theme") || "light";
         const prefersDark = window.matchMedia(
           "(prefers-color-scheme: dark)"
         ).matches;

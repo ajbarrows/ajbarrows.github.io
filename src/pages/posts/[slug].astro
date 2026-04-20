@@ -40,7 +40,7 @@ if (!Content) {
     <meta name="description" content={frontmatter.description} />
     <script is:inline>
       (function () {
-        const savedTheme = localStorage.getItem("theme") || "dark";
+        const savedTheme = localStorage.getItem("theme") || "light";
         const prefersDark = window.matchMedia(
           "(prefers-color-scheme: dark)"
         ).matches;

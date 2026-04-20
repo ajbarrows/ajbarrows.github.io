@@ -53,7 +53,7 @@ const papersWithCitations = papers.map((paper, i) => ({
     <meta name="description" content={papersContent.meta.description} />
     <script is:inline>
       (function () {
-        const savedTheme = localStorage.getItem("theme") || "dark";
+        const savedTheme = localStorage.getItem("theme") || "light";
         const prefersDark = window.matchMedia(
           "(prefers-color-scheme: dark)"
         ).matches;
