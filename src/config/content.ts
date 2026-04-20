@@ -1,21 +1,21 @@
 export const siteConfig = {
-  name: "Your Portfolio",
-  title: "Someone's Portfolio",
-  description: "A showcase of my work and thoughts",
+  name: "Tony Barrows",
+  title: "Tony Barrows",
+  description: "Data scientist, musician, Vermonter.",
   social: {
-    github: "https://github.com/tomcomtang/astro-multiplepage-portfolio",
-    twitter: "https://x.com/astrodotbuild",
-    email: "mailto:364786053@qq.com",
+    github: "https://github.com/ajbarrows",
+    scholar: "https://scholar.google.com/citations?user=0oPG6J8AAAAJ&hl=en",
+    email: "mailto:anthony.barrows@uvm.edu",
   },
 };
 
 export const homeContent = {
-  title: "Hello, I'm Your Name",
+  title: "Hi, I'm Tony Barrows",
   description:
-    "A passionate frontend developer with a keen eye for design and a love for creating beautiful, functional web experiences.",
+    "Graduate student at the University of Vermont. I study releationships between brain, behavior, and real-world health outcomes. I'm also a musician and lifelong Vermonter.",
   buttons: {
     about: {
-      text: "View About",
+      text: "About Me",
       href: "/about/",
     },
     posts: {
@@ -24,99 +24,86 @@ export const homeContent = {
     },
   },
   images: {
-    light: "https://multiplepage-portfolio.edgeone.app/assets/images/tech-background-light.svg",
-    dark: "/assets/images/tech-background-dark.svg",
+    light: "/assets/images/tony.jpeg",
+    dark: "/assets/images/tony.jpeg",
   },
 };
 
 export const aboutContent = {
   meta: {
-    title: "About - Your Portfolio",
-    description: "Learn more about my background, skills, and experience",
+    title: "About - Tony Barrows",
+    description: "About Tony Barrows — data scientist, musician, Vermonter.",
   },
   title: "About Me",
   description:
-    "This is where you can introduce yourself or your company. Share your story, mission, and values. Explain what makes you unique and why people should be interested in your work. Keep it concise but engaging.",
+    "I'm a graduate student at the University of Vermont, where I work at the intersection of computational methods and behavioral science. My research focuses on cognitive process modeling, substance use, and adolescent development — building quantitative models that connect brain, behavior, and clinical outcomes. I'm also a musician, mountain biker, and aspiring woodworker.",
   skills: [
-    "Next.js",
-    "React",
-    "TypeScript",
-    "Tailwind CSS",
-    "Node.js",
-    "Docker",
+    "Python",
+    "R",
+    "Machine Learning",
+    "Cognitive Modeling",
+    "Statistical Inference",
+    "Neuroscience",
+    "Public Health",
     "Git",
-    "AWS",
   ],
   image: {
-    src: "/assets/images/about/coder.jpg",
-    alt: "Profile",
+    src: "/assets/images/tony.jpeg",
+    alt: "Tony Barrows",
   },
   experience: {
-    title: "Experience",
+    title: "Research",
     items: [
       {
         period: "2022 - Present",
-        position: "Senior Frontend Developer",
-        company: "Tencent Cloud",
+        position: "PhD Student",
+        company: "University of Vermont",
         description:
-          "Leading frontend development for EdgeOne platform and templates.",
+          "Cognitive process modeling and machine learning applied to large-scale neuroscientific datasets.",
       },
       {
-        period: "2020 - 2022",
-        position: "Frontend Developer",
-        company: "Tencent Cloud",
+        period: "2021 - 2022",
+        position: "Research Data Analyst",
+        company: "University of Vermont",
         description:
-          "Developed and maintained multiple web applications and tools.",
+          "Clinical trial progress reporting and forecasting; open-source data mangement.",
       },
       {
-        period: "2018 - 2020",
-        position: "Junior Developer",
-        company: "Tencent Cloud",
-        description: "Worked on various client projects and internal tools.",
+        period: "2016 - 2021",
+        position: "Research Assistant",
+        company: "University of Vermont",
+        description:
+          "Longitudinal clinical trial data analysis in tobacco regulatory science and public health.",
       },
     ],
   },
   connect: {
-    title: "Let's Connect",
+    title: "Get in Touch",
     description:
-      "Feel free to reach out if you want to collaborate or just say hi! You can find us on social media or drop us an",
+      "Feel feel free to send me an",
     email: {
       text: "email",
-      href: "mailto:364786053@qq.com",
+      href: "mailto:anthony.barrows@uvm.edu",
     },
   },
 };
 
-export const projectsContent = {
+export const musicContent = {
   meta: {
-    title: "Projects - Your Portfolio",
-    description: "Showcase of my best work and projects",
+    title: "Music - Tony Barrows",
+    description: "Tony Barrows — musician based in Vermont",
   },
-  title: "Our Projects",
-  description:
-    "Here you can showcase your best work. Each project should include a brief description, the technologies used, and any notable achievements. This helps potential clients or employers understand your capabilities.",
-  projects: [
+  title: "Music",
+  description: "Strong clarinet and saxophone player; up-and-coming on flute. I play with several Vermont-based groups, including orchestras, jazz ensembles, and pit bands. Please feel free to get in touch.",
+  email: {
+    text: "email",
+    href: "mailto:ajbarrows@gmail.com",
+  },
+  images: [
     {
-      title: "Project One",
-      description:
-        "A brief description of your first project. Explain what it does and what technologies you used.",
-      image: "/assets/images/projects/project1.jpg",
-      href: "#",
-    },
-    {
-      title: "Project Two",
-      description:
-        "Describe your second project here. Highlight the key features and your role in development.",
-      image: "/assets/images/projects/project2.jpg",
-      href: "#",
-    },
-    {
-      title: "Project Three",
-      description:
-        "Share details about your third project. What problems did it solve? What was the outcome?",
-      image: "/assets/images/projects/project3.png",
-      href: "#",
+      src: "/assets/images/2023zenbarn.jpeg",
+      alt: "Tony Barrows performing at Zen Barn, 2023",
+      caption: "Zen Barn, 2023",
     },
   ],
 };
-

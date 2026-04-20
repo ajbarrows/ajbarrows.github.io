@@ -1,0 +1,203 @@
+---
+import Navigation from "../components/Navigation.astro";
+import Footer from "../components/Footer.astro";
+import { papersContent } from "../config/papers.ts";
+
+function extractDoi(href: string): string | null {
+  const match = href.match(/(?:doi\.org|dx\.doi\.org)\/(.+)$/);
+  return match ? match[1] : null;
+}
+
+const papers = papersContent.papers;
+const dois = papers.map((p) => extractDoi(p.href));
+const validDois = dois.filter(Boolean) as string[];
+
+const citationCounts: Record<string, number> = {};
+
+if (validDois.length > 0) {
+  try {
+    const res = await fetch(
+      "https://api.semanticscholar.org/graph/v1/paper/batch?fields=citationCount",
+      {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ ids: validDois.map((doi) => `DOI:${doi}`) }),
+      }
+    );
+    if (res.ok) {
+      const data = await res.json();
+      data.forEach((item: { citationCount?: number } | null, i: number) => {
+        if (item?.citationCount != null) {
+          citationCounts[validDois[i]] = item.citationCount;
+        }
+      });
+    }
+  } catch {
+    // citation counts are non-critical; silently skip on failure
+  }
+}
+
+const papersWithCitations = papers.map((paper, i) => ({
+  ...paper,
+  citationCount: dois[i] != null ? citationCounts[dois[i]!] : undefined,
+}));
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{papersContent.meta.title}</title>
+    <meta name="description" content={papersContent.meta.description} />
+    <script is:inline>
+      (function () {
+        const savedTheme = localStorage.getItem("theme") || "dark";
+        const prefersDark = window.matchMedia(
+          "(prefers-color-scheme: dark)"
+        ).matches;
+        const initialTheme =
+          savedTheme === "system"
+            ? prefersDark
+              ? "dark"
+              : "light"
+            : savedTheme;
+        if (initialTheme === "dark") {
+          document.documentElement.classList.add("dark");
+        } else {
+          document.documentElement.classList.remove("dark");
+        }
+      })();
+    </script>
+    <style>
+      .dot-hexagon-light {
+        background-image: radial-gradient(circle, #80808045 1px, transparent 1px),
+          radial-gradient(circle, #80808045 1px, transparent 1px);
+        background-size: 24px 41.57px;
+        background-position: 0 0, 12px 20.78px;
+      }
+      .dot-hexagon-dark {
+        background-image: radial-gradient(circle, #ffffff35 1px, transparent 1px),
+          radial-gradient(circle, #ffffff35 1px, transparent 1px);
+        background-size: 24px 41.57px;
+        background-position: 0 0, 12px 20.78px;
+      }
+    </style>
+  </head>
+  <body class="bg-white dark:bg-neutral-900 transition-colors duration-300 min-h-screen flex flex-col">
+    <div class="fixed inset-0 z-0 pointer-events-none">
+      <div class="absolute inset-0 -z-10 dot-hexagon-light dark:dot-hexagon-dark"></div>
+      <div class="absolute inset-0 bg-[radial-gradient(ellipse_80%_80%_at_50%_50%,transparent_0%,rgba(255,255,255,0.5)_60%,rgba(255,255,255,0.9)_85%,white_100%)] dark:bg-[radial-gradient(ellipse_80%_80%_at_50%_50%,transparent_0%,rgba(23,23,23,0.5)_60%,rgba(23,23,23,0.9)_85%,rgb(23,23,23)_100%)] -z-10"></div>
+      <div class="absolute left-0 right-0 top-0 -z-10 m-auto h-[1200px] w-[1200px] rounded-full bg-neutral-400 opacity-10 blur-[100px]"></div>
+    </div>
+
+    <main class="flex-1 relative z-10">
+      <Navigation />
+      <section class="relative z-20 max-w-4xl mx-auto mt-32 mb-12 px-7 lg:px-0">
+        <h2 class="text-2xl font-bold tracking-tight text-neutral-900 dark:text-neutral-100 sm:text-3xl lg:text-4xl">
+          {papersContent.title}
+        </h2>
+        <p class="mt-3 text-sm leading-6 text-neutral-600 dark:text-neutral-400 sm:leading-7 lg:leading-8 sm:text-base lg:text-lg">
+          {papersContent.description}
+        </p>
+
+        <div class="mt-8 flex gap-2 items-center">
+          <span class="text-xs text-neutral-500 dark:text-neutral-400 mr-1">Sort by</span>
+          <button
+            id="sort-date"
+            class="sort-btn px-3 py-1 text-xs rounded-full border border-neutral-300 dark:border-neutral-600 text-neutral-900 dark:text-neutral-100 bg-neutral-900 dark:bg-neutral-100 text-white dark:text-neutral-900 transition-colors"
+            data-sort="date"
+          >
+            Date
+          </button>
+          <button
+            id="sort-citations"
+            class="sort-btn px-3 py-1 text-xs rounded-full border border-neutral-300 dark:border-neutral-600 text-neutral-600 dark:text-neutral-400 transition-colors"
+            data-sort="citations"
+          >
+            Citations
+          </button>
+        </div>
+
+        <ol id="papers-list" class="mt-6 flex flex-col gap-6">
+          {papersWithCitations.map((paper) => {
+            const year = paper.citation.match(/\b(20\d{2})\b/)?.[1] ?? "0";
+            return (
+              <li data-year={year} data-citations={paper.citationCount ?? -1}>
+                <a
+                  href={paper.href}
+                  target="_blank"
+                  rel="noopener"
+                  class="relative flex gap-5 items-start duration-300 ease-out p-5 group rounded-2xl"
+                >
+                  <span class="absolute inset-0 z-20 block w-full h-full duration-300 ease-out bg-transparent border border-transparent border-dashed group-hover:-translate-x-1 group-hover:-translate-y-1 group-hover:border group-hover:border-neutral-300 dark:group-hover:border-neutral-600 group-hover:border-dashed rounded-2xl group-hover:bg-white dark:group-hover:bg-neutral-950" />
+                  <span class="absolute inset-0 z-10 block w-full h-full duration-300 ease-out border border-dashed rounded-2xl border-neutral-300 dark:border-neutral-600 group-hover:translate-x-1 group-hover:translate-y-1" />
+                  <span class="relative z-30 flex-shrink-0 hidden sm:block">
+                    <img
+                      src={paper.image}
+                      alt={paper.title}
+                      class="w-24 h-24 object-cover rounded-lg"
+                    />
+                  </span>
+                  <span class="relative z-30 flex flex-col gap-1 duration-300 ease-out group-hover:-translate-x-1 group-hover:-translate-y-1">
+                    <span class="text-base font-semibold text-neutral-900 dark:text-neutral-100 leading-snug">
+                      {paper.title}
+                    </span>
+                    <span class="text-sm text-neutral-600 dark:text-neutral-400">
+                      {paper.authors}
+                    </span>
+                    <span class="text-sm italic text-neutral-500 dark:text-neutral-500">
+                      {paper.citation}
+                    </span>
+                    {paper.citationCount != null && (
+                      <span class="text-xs text-neutral-400 dark:text-neutral-600">
+                        {paper.citationCount} {paper.citationCount === 1 ? "citation" : "citations"}
+                      </span>
+                    )}
+                  </span>
+                </a>
+              </li>
+            );
+          })}
+        </ol>
+      </section>
+    </main>
+
+    <Footer />
+
+    <script>
+      const list = document.getElementById("papers-list")!;
+      const buttons = document.querySelectorAll<HTMLButtonElement>(".sort-btn");
+
+      const activeClass = ["bg-neutral-900", "dark:bg-neutral-100", "text-white", "dark:text-neutral-900"];
+      const inactiveClass = ["text-neutral-600", "dark:text-neutral-400"];
+
+      function setActive(active: HTMLButtonElement) {
+        buttons.forEach((btn) => {
+          const isActive = btn === active;
+          activeClass.forEach((c) => btn.classList.toggle(c, isActive));
+          inactiveClass.forEach((c) => btn.classList.toggle(c, !isActive));
+        });
+      }
+
+      function sortList(key: "date" | "citations") {
+        const items = Array.from(list.querySelectorAll<HTMLLIElement>("li"));
+        items.sort((a, b) => {
+          const av = Number(a.dataset[key === "date" ? "year" : "citations"]);
+          const bv = Number(b.dataset[key === "date" ? "year" : "citations"]);
+          return bv - av;
+        });
+        items.forEach((item) => list.appendChild(item));
+      }
+
+      buttons.forEach((btn) => {
+        btn.addEventListener("click", () => {
+          const key = btn.dataset.sort as "date" | "citations";
+          sortList(key);
+          setActive(btn);
+        });
+      });
+    </script>
+  </body>
+</html>
