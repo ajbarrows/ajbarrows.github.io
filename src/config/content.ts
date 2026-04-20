@@ -1,5 +1,6 @@
 export const siteConfig = {
   name: "Tony Barrows",
+  fullname: "Anthony J. Barrows",
   title: "Tony Barrows",
   description: "Data scientist, musician, Vermonter.",
   social: {
@@ -10,7 +11,7 @@ export const siteConfig = {
 };
 
 export const homeContent = {
-  title: "Hi, I'm Tony Barrows",
+  title: "Hi, I'm Tony",
   description:
     "Graduate student at the University of Vermont. I study releationships between brain, behavior, and real-world health outcomes. I'm also a musician and lifelong Vermonter.",
   buttons: {
