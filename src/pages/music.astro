@@ -3,6 +3,11 @@ import Navigation from "../components/Navigation.astro";
 import Footer from "../components/Footer.astro";
 import { musicContent } from "../config/content";
 import { events } from "../config/events";
+import { Image } from "astro:assets";
+
+const galleryImages = Object.values(
+  import.meta.glob<{ default: ImageMetadata }>("../assets/images/music/**/*.{jpg,jpeg,png,webp}", { eager: true })
+).map((mod) => mod.default);
 
 const today = new Date();
 today.setHours(0, 0, 0, 0);
@@ -150,18 +155,102 @@ function formatDate(iso: string) {
           )}
         </div>
 
-        <div class="mt-8 flex flex-col gap-6">
-          {musicContent.images.map((image) => (
-            <div>
-              <img
-                src={image.src}
-                alt={image.alt}
-                class="w-full max-w-2xl rounded-2xl object-cover shadow-lg"
-              />
-              <p class="mt-2 text-sm text-neutral-500 dark:text-neutral-500">{image.caption}</p>
+        {galleryImages.length > 0 && (
+          <div class="mt-16">
+            <h3 class="text-xl font-bold tracking-tight text-neutral-900 dark:text-neutral-100 sm:text-2xl mb-6">
+              Photos
+            </h3>
+            <div class="columns-1 sm:columns-2 lg:columns-3 gap-4 space-y-4">
+              {galleryImages.map((img, i) => (
+                <button
+                  class="gallery-btn block w-full break-inside-avoid rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-shadow duration-200 focus:outline-none focus:ring-2 focus:ring-neutral-400"
+                  data-index={i}
+                  aria-label={`Open photo ${i + 1}`}
+                >
+                  <Image
+                    src={img}
+                    alt={`Music photo ${i + 1}`}
+                    class="w-full object-cover"
+                    widths={[400, 800]}
+                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                  />
+                </button>
+              ))}
             </div>
-          ))}
+          </div>
+        )}
+
+        <!-- Lightbox -->
+        <div
+          id="lightbox"
+          class="fixed inset-0 z-50 hidden items-center justify-center bg-black/80 backdrop-blur-sm p-4"
+          role="dialog"
+          aria-modal="true"
+          aria-label="Photo lightbox"
+        >
+          <button
+            id="lightbox-close"
+            class="absolute top-4 right-4 text-white/80 hover:text-white text-3xl leading-none focus:outline-none"
+            aria-label="Close lightbox"
+          >&times;</button>
+          <button
+            id="lightbox-prev"
+            class="absolute left-4 text-white/80 hover:text-white text-4xl leading-none focus:outline-none select-none"
+            aria-label="Previous photo"
+          >&#8249;</button>
+          <button
+            id="lightbox-next"
+            class="absolute right-4 text-white/80 hover:text-white text-4xl leading-none focus:outline-none select-none"
+            aria-label="Next photo"
+          >&#8250;</button>
+          <img
+            id="lightbox-img"
+            src=""
+            alt=""
+            class="max-h-[90vh] max-w-full rounded-lg shadow-2xl object-contain"
+          />
         </div>
+
+        <script define:vars={{ galleryImages: galleryImages.map(img => img.src) }}>
+          const btns = document.querySelectorAll(".gallery-btn");
+          const lightbox = document.getElementById("lightbox");
+          const lbImg = document.getElementById("lightbox-img");
+          const lbClose = document.getElementById("lightbox-close");
+          const lbPrev = document.getElementById("lightbox-prev");
+          const lbNext = document.getElementById("lightbox-next");
+          let current = 0;
+
+          function open(i) {
+            current = i;
+            lbImg.src = galleryImages[i];
+            lbImg.alt = `Music photo ${i + 1}`;
+            lightbox.classList.remove("hidden");
+            lightbox.classList.add("flex");
+            lbClose.focus();
+          }
+
+          function close() {
+            lightbox.classList.add("hidden");
+            lightbox.classList.remove("flex");
+          }
+
+          btns.forEach((btn) => {
+            btn.addEventListener("click", () => open(Number(btn.dataset.index)));
+          });
+
+          lbClose.addEventListener("click", close);
+          lbPrev.addEventListener("click", () => open((current - 1 + galleryImages.length) % galleryImages.length));
+          lbNext.addEventListener("click", () => open((current + 1) % galleryImages.length));
+
+          lightbox.addEventListener("click", (e) => { if (e.target === lightbox) close(); });
+
+          document.addEventListener("keydown", (e) => {
+            if (lightbox.classList.contains("hidden")) return;
+            if (e.key === "Escape") close();
+            if (e.key === "ArrowLeft") open((current - 1 + galleryImages.length) % galleryImages.length);
+            if (e.key === "ArrowRight") open((current + 1) % galleryImages.length);
+          });
+        </script>
       </section>
     </main>
 
