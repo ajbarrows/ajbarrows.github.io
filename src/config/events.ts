@@ -16,6 +16,13 @@ export const events: MusicEvent[] = [
   //   href: "https://www.flynncenter.org",
   // },
     {
+    date: "2026-06-20",
+    title: "Vermont Jazz Ensemble",
+    venue: "Lost Nation Brewing",
+    location: "Morristown, VT",
+    href: "https://sevendaystickets.com/e/vermont-jazz-ensemble",
+  },
+    {
     date: "2026-04-25",
     title: "Vermont Jazz Ensemble's 50th Anniverary Show",
     venue: "Higher Ground",

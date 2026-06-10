@@ -2,15 +2,13 @@
 import Layout from "../layouts/Layout.astro";
 import Navigation from "../components/Navigation.astro";
 import Footer from "../components/Footer.astro";
-import { papersContent } from "../config/papers.ts";
+import { getPeerReviewedPapers } from "../utils/getPublications.ts";
 
-function extractDoi(href: string): string | null {
-  const match = href.match(/(?:doi\.org|dx\.doi\.org)\/(.+)$/);
+const papers = getPeerReviewedPapers();
+const dois = papers.map((p) => {
+  const match = p.href.match(/(?:doi\.org|dx\.doi\.org)\/(.+)$/);
   return match ? match[1] : null;
-}
-
-const papers = papersContent.papers;
-const dois = papers.map((p) => extractDoi(p.href));
+});
 const validDois = dois.filter(Boolean) as string[];
 
 const citationCounts: Record<string, number> = {};
@@ -44,11 +42,10 @@ const papersWithCitations = papers.map((paper, i) => ({
 }));
 ---
 
-<Layout title={papersContent.meta.title} description={papersContent.meta.description}>
+<Layout title="Papers — Tony Barrows" description="Peer-reviewed publications by Tony Barrows">
   <Navigation />
   <main>
-    <h1>{papersContent.title}</h1>
-    <p>{papersContent.description}</p>
+    <h1>Papers</h1>
 
     <p>
       <span>Sort by: </span>
@@ -62,15 +59,24 @@ const papersWithCitations = papers.map((paper, i) => ({
       {papersWithCitations.map((paper) => {
         const year = paper.citation.match(/\b(20\d{2})\b/)?.[1] ?? "0";
         return (
-          <li data-year={year} data-citations={paper.citationCount ?? -1}>
-            <a href={paper.href} target="_blank" rel="noopener">
-              <strong>{paper.title}</strong>
-            </a><br />
-            <span>{paper.authors}</span><br />
-            <em>{paper.citation}</em>
-            {paper.citationCount != null && (
-              <span> &middot; {paper.citationCount} {paper.citationCount === 1 ? "citation" : "citations"}</span>
-            )}
+          <li data-year={year} data-citations={paper.citationCount ?? -1} style="display: flex; gap: 1rem; align-items: flex-start;">
+            <div style="width: 100px; flex-shrink: 0;">
+              {paper.image && (
+                <a href={paper.href} target="_blank" rel="noopener">
+                  <img src={paper.image} alt="" style="width: 100px; margin-top: 0.2em;" />
+                </a>
+              )}
+            </div>
+            <div>
+              <a href={paper.href} target="_blank" rel="noopener">
+                <strong>{paper.title}</strong>
+              </a><br />
+              <span>{paper.authors}</span><br />
+              <em>{paper.citation}</em>
+              {paper.citationCount != null && (
+                <span> &middot; {paper.citationCount} {paper.citationCount === 1 ? "citation" : "citations"}</span>
+              )}
+            </div>
           </li>
         );
       })}

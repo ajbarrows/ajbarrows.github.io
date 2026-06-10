@@ -2,6 +2,7 @@
 import Layout from "../layouts/Layout.astro";
 import Navigation from "../components/Navigation.astro";
 import Footer from "../components/Footer.astro";
+import { aboutContent } from "../config/content.ts";
 ---
 
 <Layout title="CV — Tony Barrows" description="Curriculum vitae of Tony Barrows">
@@ -12,6 +13,18 @@ import Footer from "../components/Footer.astro";
       <a href="/assets/ajb_cv.pdf" target="_blank" rel="noopener">Open PDF</a> &middot;
       <a href="/assets/ajb_cv.pdf" download>Download</a>
     </p>
+
+    <h2>{aboutContent.experience.title}</h2>
+    <ul class="experience-list">
+      {aboutContent.experience.items.map((item) => (
+        <li>
+          <p class="exp-period">{item.period}</p>
+          <p class="exp-position">{item.position}</p>
+          <p class="exp-company">{item.company}</p>
+          <p class="exp-desc">{item.description}</p>
+        </li>
+      ))}
+    </ul>
   </main>
   <Footer />
 </Layout>

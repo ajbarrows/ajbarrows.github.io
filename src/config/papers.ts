@@ -9,7 +9,7 @@ export const papersContent = {
       title: "Cognitive Process Models Reveal Meaningful Brain–Behavior Associations in the Adolescent Brain Cognitive Development Study Stop-signal Task",
       authors: "Barrows A, Weigard A, McCabe M, Potter A, Garavan H, Allgaier N",
       citation: "Journal of Cognitive Neuroscience, 2026",
-      image: "",
+      image: "/assets/images/figures/BaWe26.jpg",
       href: "https://doi.org/10.1162/JOCN.a.2487",
     },
     {
