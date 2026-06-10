@@ -2,7 +2,7 @@ export const siteConfig = {
   name: "Tony Barrows",
   fullname: "Anthony J. Barrows",
   title: "Tony Barrows",
-  description: "Data scientist, musician, Vermonter.",
+  // description: "Data scientist, musician, Vermonter.",
   social: {
     github: "https://github.com/ajbarrows",
     scholar: "https://scholar.google.com/citations?user=0oPG6J8AAAAJ&hl=en",
@@ -11,19 +11,19 @@ export const siteConfig = {
 };
 
 export const homeContent = {
-  title: "Hi, I'm Tony",
+  title: "Tony Barrows",
   description:
-    "Graduate student at the University of Vermont. I study releationships between brain, behavior, and real-world health outcomes. I'm also a musician and lifelong Vermonter.",
-  buttons: {
-    about: {
-      text: "About Me",
-      href: "/about/",
-    },
-    posts: {
-      text: "Read Posts",
-      href: "/posts/",
-    },
-  },
+    "I study the relationships between brain development, behavior, substance use, and clinical outcomes. I'm also a musician, mountain biker, and aspiring woodworker.",
+  // buttons: {
+  //   about: {
+  //     text: "About Me",
+  //     href: "/about/",
+  //   },
+  //   posts: {
+  //     text: "Read Posts",
+  //     href: "/posts/",
+  //   },
+  // },
   images: {
     light: "/assets/images/tony.jpeg",
     dark: "/assets/images/tony.jpeg",
@@ -37,7 +37,7 @@ export const aboutContent = {
   },
   title: "About Me",
   description:
-    "I'm a graduate student at the University of Vermont, where I work at the intersection of computational methods and behavioral science. My research focuses on cognitive process modeling, substance use, and adolescent development — building quantitative models that connect brain, behavior, and clinical outcomes. I'm also a musician, mountain biker, and aspiring woodworker.",
+    "I study the relationships between brain development, behavior, substance use, and clinical outcomes. I'm also a musician, mountain biker, and aspiring woodworker.",
   skills: [
     "Python",
     "R",
