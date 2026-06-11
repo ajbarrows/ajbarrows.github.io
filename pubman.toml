@@ -7,7 +7,7 @@ my_last_name = "Barrows"
 
 [cv]
 tex = "cv_resume/cv/ajb_cv.tex"
-figures_dir = "cv_resume/cv/pubfigures"
+figures_dir = "figures"
 build_cmd = "pdflatex -interaction=nonstopmode ajb_cv.tex && bibtex ajb_cv && pdflatex -interaction=nonstopmode ajb_cv.tex && pdflatex -interaction=nonstopmode ajb_cv.tex"
 
 [cv.section_map]

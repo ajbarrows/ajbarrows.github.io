@@ -54,12 +54,12 @@ The website picks up the new entry on the next build (push to `main` triggers Gi
 
 ### After adding
 
-For papers that should display a figure, place the image at both:
+For papers that should display a figure, place the image at:
 ```
-ajbarrows.github.io/public/assets/images/figures/{key}.jpg   ← website
-cv_resume/cv/pubfigures/{key}.jpg                            ← CV
+figures/{key}.jpg
 ```
 
+Both the website and CV pull from this directory via symlinks (`cv_resume/cv/pubfigures` and `ajbarrows.github.io/public/assets/images/figures` both point here).
 Then set `featured: true` and `image: /assets/images/figures/{key}.jpg` in `publications.yaml`.
 
 ### Editing the YAML directly

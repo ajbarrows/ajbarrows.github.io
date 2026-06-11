@@ -188,7 +188,7 @@
   year: 2023
   journal: American College of Neuropsychopharmacology 2023 Annual Meeting
   featured: false
-- key: WiOl21
+- key: WiOl22
   type: article
   category: peer-reviewed
   title: The Impact of the Covid-19 Pandemic on Smoking Among Vulnerable Populations
@@ -316,7 +316,7 @@
   volume: '140'
   doi: 10.1016/j.ypmed.2020.106221
   featured: true
-  image: /assets/images/figures/TyAn20.jpg
+  image: /assets/images/figures/NiBa20.jpg
 - key: WiOl20a
   type: misc
   category: conference
