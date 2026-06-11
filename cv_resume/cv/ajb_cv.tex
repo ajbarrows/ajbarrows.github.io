@@ -1,0 +1,131 @@
+\documentclass{my_cv}
+\nobibliography*
+
+\begin{document}
+	% top bit
+	\centering
+	\name{Anthony J Barrows}\\
+		\vspace{0.2cm}
+%	\centering
+%	{\textbf{{\Large Anthony J. Barrows}}
+	
+%	{\textbf{Updated \today}}\\
+
+	\hrule
+		\vspace{0.2cm}
+	\contact{1 South Prospect St}{Burlington VT 05401}{\href{mailto:anthony.barrows@uvm.edu}{anthony.barrows@uvm.edu}}{}
+	
+	% CV sections
+	
+	\vspace{0.5cm}
+	% education
+
+	\begin{longtable}[l]{g{0.2\textwidth}g{0.6\textwidth}r}
+    \cvsection{Education}   
+    						& \href{https://vermontcomplexsystems.org/}{\textbf{PhD in Complex Systems and Data Science}} &2022-2026 (Expected)\\ 
+    						& \href{https://vermontcomplexsystems.org/}{\textbf{MS in Complex Systems and Data Science}} &2019-2021\\ 
+                            & \href{www.uvm.edu}{The University of Vermont},                         Burlington, Vermont \\
+                            &\\
+                            
+                            &	\href{https://www.hartford.edu/academics/schools-colleges/arts-sciences/academics/departments-and-centers/psychology/default.aspx}{\textbf{BA in Psychology}} &2013--2016\\
+                            &	\href{https://www.hartford.edu/}{University of Hartford}, Hartford, Connecticut \\
+	
+							&  Honors Thesis: \textit{Characteristics Associated with MMPI-2 L-scale Elevations in a Sample of Police Officer Candidates}\\
+							&\\
+	
+	\cvsection{Experience}
+							& Teaching Fellow, \href{https://www.abcd-repronim.org}{ABCD-ReproNim Course} & 2025-2026\\
+							& Writing Consultant, \href{https://www.uvm.edu/gradwriting}{Graduate Writing Center} & 2023--Present\\
+							& Program Representative, \href{https://www.uvm.edu/gss}{Graduate Student Senate} &2023--2024\\
+							& \\
+							&	
+						Research Data Analyst,  \href{http://www.med.uvm.edu/behaviorandhealth/home}{Vermont Center on Behavior and Health} &2021--2022\\
+							&	Lead Research Assistant, \href{http://www.med.uvm.edu/behaviorandhealth/home}{Vermont Center on Behavior and Health} &2019--2021\\
+							
+							&		Research Assistant, \href{http://www.med.uvm.edu/behaviorandhealth/home}{Vermont Center on Behavior and Health} &2016--2019 \\
+
+							
+							&\\
+							&\\
+							
+		\cvsection{Awards} &
+			 NEuroimaging Reserach VErmont (NERVE) Lab predoctoral fellow\\ 
+			 & \hspace{2em} (T32 DA043593) \\
+
+		& Harry L. Leonhard Award for Greatest Contribution to the Psychology \\ 
+		& 	\hspace{2em} Department by a Graduating Psychology Major
+	\end{longtable}
+
+{
+%\begin{longtable}{p{0.2\textwidth}p{0.725\textwidth}}
+\begin{longtable}[l]{g{0.2\textwidth}g{0.725\textwidth}}
+	% publications
+	\cvsection{Publications} & \\
+	\\
+	\pubgraphic{BaWe26}	& \pubentry{6}{BaWe26}
+
+	\pubgraphic{BaKl25}	& \pubentry{5}{BaKl25}
+
+	\pubgraphic{WiOl21} & \pubentry{4}{WiOl21}
+
+	\pubgraphic{HiTi20}	& \pubentry{3}{HiTi20}
+
+	\pubgraphic{NiBa20}	& \pubentry{2}{NiBa20}
+
+	\pubgraphic{PaSt18}	& \pubentry{1}{PaSt18}
+							&\\
+							&\\
+	\cvsection{Invited Talks} & \\
+							& \pubentry{1}{BarrowsVDH26}
+							&\\
+							&\\
+	\cvsection{Selected Talks} & \\
+						&	\pubentry{2}{Ba23}
+						&	\pubentry{1}{TaGa23}
+						&\\
+						&\\
+	\cvsection{Abstracts} & \\
+							& \pubentry{8}{BarrowsNBH2026}
+							& \pubentry{7}{BarrowsFlux2025}
+							& \pubentry{6}{BarrowsSRNT2024}
+							&	\pubentry{5}{BaPe23}
+							&	\pubentry{4}{WiOl20b}
+							&	\pubentry{3}{WiOl20a}
+							&	\pubentry{2}{StSi17}
+							&	\pubentry{1}{BaAn16}
+\end{longtable}
+}
+
+\begin{longtable}[l]{g{0.2\textwidth}g{0.725\textwidth}r}
+	\cvsection{Software Contributions} &
+		\begin{description}
+			\tightlist
+			\item[\href{https://teanijarv.github.io/yabplot/}{YabPlot}] {
+				A Python library for creating beautiful, publication-quality 3D brain visualizations.
+			}
+			\item[\href{https://ajbarrows.github.io/vitrocal/}{\textbf{VitroCal}}]{
+				A Python library for analyzing data collected from \textit{in vitro} calcium images.
+			}
+		\end{description}\\
+	\cvsection{Computer Skills}	&  
+		\begin{description}
+			\tightlist
+			\item\textbf{Programming Languages}{: R, Python, \LaTeX, Markdown}
+			\item\textbf{Frameworks}{: R Shiny, R Markdown, Microsoft Access, Linux CLI, REDCap API} 
+			\item\textbf{Developer Tools}{: R Studio, Jupyter, Visual Studio Code} 
+			\item\textbf{Version Control}{: Git, GitHub} 
+			\item\textbf{Libraries}{: Nilearn, tidyverse, ggplot2, lcmm, Plotly, pandas, NumPy, Matplotlib, scikit-learn} 
+			\item\textbf{Software}{: Microsoft Excel, REDCap (Project Design)}
+		\end{description}\\
+		& \\
+		& \\
+\end{longtable}
+
+\nobibliography{bibliography.bib}
+\bibliographystyle{apalike}
+
+% Uncomment temporarily to regenerate the .bbl, then comment out again.
+% \bibliography{bibliography.bib}
+
+
+\end{document}
