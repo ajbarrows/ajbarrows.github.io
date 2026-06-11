@@ -1,0 +1,158 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Navigation from "../components/Navigation.astro";
+import Footer from "../components/Footer.astro";
+import { musicContent } from "../config/content";
+import { events } from "../config/events";
+import { Image } from "astro:assets";
+
+const galleryImages = Object.values(
+  import.meta.glob<{ default: ImageMetadata }>("../assets/images/music/**/*.{jpg,jpeg,png,webp}", { eager: true })
+).map((mod) => mod.default);
+
+const today = new Date();
+today.setHours(0, 0, 0, 0);
+
+const upcoming = events
+  .filter((e) => new Date(e.date + "T00:00:00") >= today)
+  .sort((a, b) => a.date.localeCompare(b.date));
+
+const past = events
+  .filter((e) => new Date(e.date + "T00:00:00") < today)
+  .sort((a, b) => b.date.localeCompare(a.date));
+
+function formatDate(iso: string) {
+  return new Date(iso + "T00:00:00").toLocaleDateString("en-US", {
+    year: "numeric",
+    month: "long",
+    day: "numeric",
+  });
+}
+---
+
+<Layout title={musicContent.meta.title} description={musicContent.meta.description}>
+  <Navigation />
+  <main>
+    <h1>{musicContent.title}</h1>
+    <p>{musicContent.description}</p>
+    <p><a href={musicContent.email.href}>Get in touch</a></p>
+
+    {events.length > 0 && (
+      <section>
+        <h2>Events</h2>
+        <table>
+          <thead>
+            <tr>
+              <th>Date</th>
+              <th>Event</th>
+              <th>Venue</th>
+              <th>Location</th>
+            </tr>
+          </thead>
+          <tbody>
+            {upcoming.length > 0 && (
+              <>
+                <tr><td colspan="4"><em>Upcoming</em></td></tr>
+                {upcoming.map((event) => (
+                  <tr>
+                    <td><time>{formatDate(event.date)}</time></td>
+                    <td>{event.href
+                      ? <a href={event.href} target="_blank" rel="noopener noreferrer">{event.title}</a>
+                      : event.title}
+                    </td>
+                    <td>{event.venue}</td>
+                    <td>{event.location}</td>
+                  </tr>
+                ))}
+              </>
+            )}
+            {past.length > 0 && (
+              <>
+                <tr><td colspan="4"><em>Past</em></td></tr>
+                {past.map((event) => (
+                  <tr>
+                    <td><time>{formatDate(event.date)}</time></td>
+                    <td>{event.href
+                      ? <a href={event.href} target="_blank" rel="noopener noreferrer">{event.title}</a>
+                      : event.title}
+                    </td>
+                    <td>{event.venue}</td>
+                    <td>{event.location}</td>
+                  </tr>
+                ))}
+              </>
+            )}
+          </tbody>
+        </table>
+      </section>
+    )}
+
+    {galleryImages.length > 0 && (
+      <section>
+        <h2>Photos</h2>
+        <div class="gallery">
+          {galleryImages.map((img, i) => (
+            <button
+              class="gallery-btn"
+              data-index={i}
+              aria-label={`Open photo ${i + 1}`}
+            >
+              <Image
+                src={img}
+                alt={`Music photo ${i + 1}`}
+                widths={[400, 800]}
+                sizes="(max-width: 540px) 100vw, (max-width: 800px) 50vw, 33vw"
+              />
+            </button>
+          ))}
+        </div>
+      </section>
+    )}
+
+    <div id="lightbox" role="dialog" aria-modal="true" aria-label="Photo lightbox">
+      <button id="lightbox-close" aria-label="Close">&times;</button>
+      <button id="lightbox-prev" aria-label="Previous">&#8249;</button>
+      <button id="lightbox-next" aria-label="Next">&#8250;</button>
+      <img id="lightbox-img" src="" alt="" />
+    </div>
+  </main>
+  <Footer />
+</Layout>
+
+<script define:vars={{ galleryImages: galleryImages.map(img => img.src) }}>
+  const btns = document.querySelectorAll(".gallery-btn");
+  const lightbox = document.getElementById("lightbox");
+  const lbImg = document.getElementById("lightbox-img");
+  const lbClose = document.getElementById("lightbox-close");
+  const lbPrev = document.getElementById("lightbox-prev");
+  const lbNext = document.getElementById("lightbox-next");
+  let current = 0;
+
+  function open(i) {
+    current = i;
+    lbImg.src = galleryImages[i];
+    lbImg.alt = `Music photo ${i + 1}`;
+    lightbox.classList.add("open");
+    lbClose.focus();
+  }
+
+  function close() {
+    lightbox.classList.remove("open");
+  }
+
+  btns.forEach((btn) => {
+    btn.addEventListener("click", () => open(Number(btn.dataset.index)));
+  });
+
+  lbClose.addEventListener("click", close);
+  lbPrev.addEventListener("click", () => open((current - 1 + galleryImages.length) % galleryImages.length));
+  lbNext.addEventListener("click", () => open((current + 1) % galleryImages.length));
+  lightbox.addEventListener("click", (e) => { if (e.target === lightbox) close(); });
+
+  document.addEventListener("keydown", (e) => {
+    if (!lightbox.classList.contains("open")) return;
+    if (e.key === "Escape") close();
+    if (e.key === "ArrowLeft") open((current - 1 + galleryImages.length) % galleryImages.length);
+    if (e.key === "ArrowRight") open((current + 1) % galleryImages.length);
+  });
+</script>

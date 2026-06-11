@@ -22,3 +22,14 @@ dist/
 # logs
 *.log
 .edgeone/
+
+# LaTeX build artifacts
+*.aux
+*.bbl
+*.blg
+*.out
+*.toc
+*.fls
+*.fdb_latexmk
+*.synctex.gz
+texput.log

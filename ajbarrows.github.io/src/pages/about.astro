@@ -1,0 +1,38 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Navigation from "../components/Navigation.astro";
+import Footer from "../components/Footer.astro";
+import { aboutContent } from "../config/content.ts";
+---
+
+<Layout title={aboutContent.meta.title} description={aboutContent.meta.description}>
+  <Navigation />
+  <main>
+    <h1>{aboutContent.title}</h1>
+    <p>{aboutContent.description}</p>
+
+    <h2>Skills</h2>
+    <ul class="skills">
+      {aboutContent.skills.map((skill) => <li>{skill}</li>)}
+    </ul>
+
+    <h2>{aboutContent.experience.title}</h2>
+    <ul class="experience-list">
+      {aboutContent.experience.items.map((item) => (
+        <li>
+          <p class="exp-period">{item.period}</p>
+          <p class="exp-position">{item.position}</p>
+          <p class="exp-company">{item.company}</p>
+          <p class="exp-desc">{item.description}</p>
+        </li>
+      ))}
+    </ul>
+
+    <h2>{aboutContent.connect.title}</h2>
+    <p>
+      {aboutContent.connect.description}
+      <a href={aboutContent.connect.email.href}>{aboutContent.connect.email.text}</a>.
+    </p>
+  </main>
+  <Footer />
+</Layout>

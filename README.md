@@ -1,124 +1,109 @@
-# Multiple Page Portfolio
+# Portfolio
 
-A modern, responsive portfolio website built with Astro, featuring multiple pages including a blog system, projects showcase, and about page.
+This repository contains three things:
 
-## Quick Deploy
+- `ajbarrows.github.io/` — Astro portfolio website
+- `cv_resume/` — LaTeX CV, resume, and NIH biosketch
+- `publications.yaml` — single source of truth for all publications
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/tomcomtang/astro-multiplepage-portfolio&project-name=astro-multiplepage-portfolio&repository-name=astro-multiplepage-portfolio)
-
-## Preview
-
-You can preview the project online at:
-
-<https://astro-multiplepage-portfolio-blush.vercel.app/>
-
-## Features
-
-- 🎨 Modern and clean design with dark/light mode support
-- 📱 Fully responsive layout
-- 📝 Blog system with Markdown support
-- 🚀 Project showcase
-- 🔍 Pagination for blog posts
-- 🎯 SEO optimized
-- 🌙 Dark/Light theme toggle
-- 📦 Static site generation
-
-## Tech Stack
-
-- **Framework**: Astro 5.x
-- **Styling**: Tailwind CSS
-- **Content**: Markdown with Astro Content Collections
-- **Syntax Highlighting**: Tailwind Typography plugin
-- **Language**: TypeScript
-- **Build Tool**: Vite
-
-## Getting Started
-
-1. Clone the repository:
-
-```bash
-git clone https://github.com/tomcomtang/astro-multiplepage-portfolio.git
-```
-
-2. Install dependencies:
-
-```bash
-npm install
-```
-
-3. Run the development server:
-
-```bash
-npm run dev
-```
-
-4. Build for production:
-
-```bash
-npm run build
-```
-
-## Project Structure
-
-```
-├── src/
-│   ├── components/         # Reusable components
-│   ├── config/            # Configuration files
-│   ├── content/           # Markdown blog posts
-│   └── pages/             # Astro pages
-└── public/                # Static assets
-```
-
-## Content Management
-
-### Blog Posts
-
-1. Create your markdown files in `src/content/posts/` directory
-2. Each markdown file should follow this format:
-
-```markdown
----
-title: Your Post Title
-description: A brief description of your post
-date: 2024-03-21
-readTime: 5 min
 ---
 
-Your post content here...
+## Publications
+
+`publications.yaml` drives both the website and the CV. Neither derived file (`bibliography.bib`, the website's papers page) should be edited by hand.
+
+### Setup
+
+```bash
+uv tool install -e pubman/
 ```
 
-### Page Content
+### Adding a publication
 
-You can customize the content of different pages by modifying `src/config/content.ts`:
+**From a DOI** (fetches metadata from CrossRef):
+```bash
+pubman --doi 10.1162/JOCN.a.2487
+```
 
-- Site metadata and social links
-- Home page content
-- About page content
-- Projects showcase
+**From a BibTeX file:**
+```bash
+pubman --bib path/to/entry.bib
+```
 
-## Blog System
+**Overriding the category:**
+```bash
+pubman --doi 10.xxxx/... --category invited-talk
+```
 
-The blog system supports:
+| Category | CV section |
+|---|---|
+| `peer-reviewed` | Publications |
+| `invited-talk` | Invited Talks |
+| `selected-talk` | Selected Talks |
+| `conference` | Abstracts |
 
-- Markdown content
-- Code syntax highlighting
-- Reading time estimation
-- Pagination
+### After adding
 
-## Customization
+1. **Figure** — place the image at both:
+   ```
+   ajbarrows.github.io/public/assets/images/figures/{key}.jpg   ← website
+   cv_resume/cv/pubfigures/{key}.jpg                            ← CV
+   ```
 
-1. Add new blog posts by creating Markdown files in the `src/content/posts` directory
-2. Update project information in `src/config/content.ts`
-3. Modify site configuration in `src/config/content.ts`
+2. **CV** — `ajb_cv.tex` is updated automatically with a new `\pubentry` line.
 
-## License
+3. **Rebuild the website:**
+   ```bash
+   cd ajbarrows.github.io && npm run build
+   ```
 
-MIT
+4. **Recompile the CV:**
+   ```bash
+   cd cv_resume/cv && latexmk ajb_cv.tex
+   ```
 
-## Author
+### Editing the YAML directly
 
-tomcomtang
+Edit `publications.yaml` by hand to fix a title, update an image path, etc. Then regenerate derived files:
 
-## About
+```bash
+pubman --regenerate
+```
 
-A personal blog theme template that includes automatic recognition of Markdown content and generates configuration accordingly.
+Note: removing an entry also requires manually removing its `\pubentry` (and `\pubgraphic` if peer-reviewed) from `ajb_cv.tex`.
+
+### Key fields
+
+| Field | Purpose |
+|---|---|
+| `key` | BibTeX citekey; also the expected figure filename |
+| `category` | Controls which CV section the entry appears in |
+| `featured` | `true` to show on the website papers page (default for peer-reviewed) |
+| `image` | Website figure path (e.g. `/assets/images/figures/BaWe26.jpg`) |
+
+---
+
+## Website
+
+```bash
+cd ajbarrows.github.io
+npm run dev      # dev server at localhost:4321
+npm run build    # build to dist/
+```
+
+Content lives in `ajbarrows.github.io/src/config/`:
+- `content.ts` — home, about, projects, music pages
+- `events.ts` — music event schedule
+
+The papers page reads `publications.yaml` directly at build time — no intermediate file.
+
+---
+
+## CV
+
+```bash
+cd cv_resume/cv
+latexmk ajb_cv.tex
+```
+
+`bibliography.bib` is generated by pubman — do not edit it by hand.

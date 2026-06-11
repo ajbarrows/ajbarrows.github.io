@@ -1,0 +1,160 @@
+%-------------------------
+% Resume in Latex
+% Author : Jake Gutierrez
+% Based off of: https://github.com/sb2nov/resume
+% License : MIT
+%------------------------
+
+\documentclass[letterpaper,11pt]{article}
+
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage[english]{babel}
+\usepackage{tabularx}
+\usepackage{xcolor}
+\usepackage{etaremune}
+\usepackage{bibentry}
+\usepackage{parskip}
+\usepackage{hyperref}
+\input{glyphtounicode}
+
+
+
+
+%----------FONT OPTIONS----------
+% sans-serif
+% \usepackage[sfdefault]{FiraSans}
+% \usepackage[sfdefault]{roboto}
+% \usepackage[sfdefault]{noto-sans}
+% \usepackage[default]{sourcesanspro}
+
+% serif
+% \usepackage{CormorantGaramond}
+% \usepackage{charter}
+
+% AJB additions
+\colorlet{urlcolor}{blue!40!black}
+
+\hypersetup{colorlinks=true,
+	urlcolor=urlcolor}
+
+\pagestyle{fancy}
+\fancyhf{} % clear all header and footer fields
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+% Adjust margins
+%\addtolength{\oddsidemargin}{-0.5in}
+%\addtolength{\evensidemargin}{-0.5in}
+%\addtolength{\textwidth}{1in}
+%\addtolength{\topmargin}{-.5in}
+%\addtolength{\textheight}{1.0in}
+
+\urlstyle{same}
+
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+% Sections formatting
+\titleformat{\section}{
+  \vspace{-4pt}\scshape\raggedright\large
+}{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
+
+% Ensure that generate pdf is machine readable/ATS parsable
+\pdfgentounicode=1
+
+%-------------------------
+% Custom commands
+\newcommand{\resumeItem}[1]{
+  \item\small{
+    {#1 \vspace{-2pt}}
+  }
+}
+
+\newcommand{\resumeSubheading}[4]{
+  \vspace{-2pt}\item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2 \\
+      \textit{\small#3} & \textit{\small #4} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeSubSubheading}[2]{
+    \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \textit{\small#1} & \textit{\small #2} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeProjectHeading}[2]{
+    \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \small#1 & #2 \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeSubItem}[1]{\resumeItem{#1}\vspace{-4pt}}
+
+\renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
+
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.15in, label={}]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
+
+
+%% CHANGE THESE
+
+\newcommand{\company}{NPR}
+\newcommand{\position}{Senior Analyst (Corporate Sponsorship)}
+\newcommand{\actionStatment}{
+	My technical skills honed through experience and graduate education, combined with practice converting difficult concepts into plain English developed through over five years in clinical research make me an excellent candidate to help \company \space reach its goals. As someone enthralled with the magic of radio, working for \company \space would be a dream-come-true.
+}
+
+
+
+%-------------------------------------------
+%%%%%%  RESUME STARTS HERE  %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\begin{document}
+\begin{center}
+    \textbf{\Huge \scshape Anthony J. Barrows} \\ \vspace{3pt}
+    \small 358 North St. $|$
+    \small Burlington, VT 05401 $|$
+    \href{mailto:ajbarrows@gmail.com}{ajbarrows@gmail.com}
+\end{center}
+\vspace{5mm}
+	
+	To Whom it May Concern,
+	\vspace{3mm}
+	
+	Please accept my application for the \position \space position. I have held multiple research positions at the Vermont Center on Behavior and Health, fulfilling different roles as organizational needs arise. By drawing on my technical education, leadership in grant-funded trials, and my commitment to perpetual improvement and innovation, I am confident that I will be a valuable resource to \company.
+	
+	
+	My education in social science has taught me the importance of distilling complex ideas into a succinct, accurate, and logical product. I strongly believe that clear writing represents clear thinking, a principle that lends itself to clean code, and the careful pursuit of ends. While implementing an NIH/FDA-initiated clinical trial, I applied this principle by practicing and teaching careful attention to detail, and sensitivity to participants with serious psychiatric conditions like depression, anxiety, and substance use disorders. As a team lead, I provided my colleagues with consistent guidance toward protocol adherence, solutions to complicated problems, and respect for a diversity of opinions and perspectives.
+	
+	
+	Since completing a Master's in Complex Systems and Data Science at UVM, I now lead many of the Center's technical operations. Most notably, I have raised the Center’s standards for efficiency and transparency by building fully automated pipelines and dashboards to eliminate time-consuming manual reports. The consistent, user-friendly analysis I produced became critical as we transitioned to fully remote clinical trials, allowing us to measure instantaneous effects and quickly identify challenges. Responsible for administering electronic data capturing systems, I have deployed effective, integrated resources used productively throughout affiliated teams across the country.
+	
+	My approach to data science is defined by the post-disciplinary methods taught in complex systems, where research data analysis helps write narratives about underlying mechanisms, inviting generalized conclusions and more informed questions. I implement this story-telling model throughout my work, from developing better data structures to preparing in-lab reports and publishable manuscripts.
+	
+	\actionStatment I look forward to discussing my qualifications, commitment to learning new skills and perspectives, and keen interest in adapting to a new, decentralized world in more detail with you. Thank you for your time and consideration.
+	
+	\vspace{5mm}
+	
+	Sincerely,
+	\vspace{3mm}
+	
+	Anthony J. Barrows
+
+\end{document}

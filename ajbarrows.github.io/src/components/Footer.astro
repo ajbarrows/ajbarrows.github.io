@@ -1,0 +1,8 @@
+---
+import { siteConfig } from "../config/content";
+const year = new Date().getFullYear();
+---
+
+<footer>
+  <p>© {year} {siteConfig.fullname} &middot; <a href={siteConfig.social.github}>GitHub</a> &middot; <a href={siteConfig.social.email}>Email</a></p>
+</footer>

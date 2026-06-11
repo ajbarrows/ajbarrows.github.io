@@ -1,0 +1,468 @@
+- key: BaWe26
+  type: article
+  category: peer-reviewed
+  title: Cognitive Process Models Reveal Meaningful Brain–Behavior Associations in the Adolescent Brain Cognitive Development
+    Study Stop-signal Task
+  authors:
+  - first: Anthony
+    last: Barrows
+  - first: Alexander
+    last: Weigard
+  - first: Matthew
+    last: McCabe
+  - first: Alexandra
+    last: Potter
+  - first: Hugh
+    last: Garavan
+  - first: Nicholas
+    last: Allgaier
+  year: 2026
+  featured: true
+  image: /assets/images/figures/BaWe26.jpg
+  month: 2
+  journal: Journal of Cognitive Neuroscience
+  pages: 1--13
+  doi: 10.1162/JOCN.a.2487
+  abstract: "Abstract\n                  Characterizing associations between individual differences in brain activity and\
+    \ behavior remains a primary challenge in functional neuroimaging research. A growing literature supports the use of formal\
+    \ computational models to represent the mechanistic processes underlying behavior during cognitive tasks. This study applies\
+    \ one such model to the Adolescent Brain Cognitive Development Study stop-signal task (SST) and quantifies relationships\
+    \ between mechanistic model parameters and task-related brain activation using a machine-learning-based predictive modeling\
+    \ approach. With a large sample of task performance and task-related neuroimaging data from 9- to 11-year-olds (n = 6469),\
+    \ we found that SST formal model parameters showed relatively strong relationships with fMRI task-related activation (average\
+    \ variance explained as high as R2 = 26.86 ± 1.69%) compared with empirically derived performance measures (largest R2\
+    \ = 20.89 ± 1.41%). Our approach suggests that neuroimaging data are most closely associated with evidence accumulation\
+    \ for the go choice process and with attentional lapses that prevent the initiation of the stop process (“trigger failure”).\
+    \ Increased salience network (i.e., insula and anterior cingulate) activity on correct go trials was associated with worse\
+    \ evidence accumulation, and greater visual cortex activity on error trials was associated with fewer attentional lapses.\
+    \ In addition, through relationships with phenotypic measures of inhibition, impulsivity, and cognition, we provide evidence\
+    \ supporting the formal model's construct validity. We demonstrate the utility of computational cognitive modeling for\
+    \ revealing stronger, and more meaningful, associations between brain function and behavior."
+- key: BarrowsVDH26
+  type: misc
+  category: invited-talk
+  title: Presentation of findings from Barrows et al. (2025) (BMJ Public Health 3(2))
+  authors:
+  - first: Anthony
+    last: Barrows
+  - first: Eli
+    last: Klemperer
+  year: 2026
+  month: 2
+  journal: Vermont Department of Health Tobacco Medicaid Benefit and Promotion Quarterly Meeting
+  featured: false
+- key: BarrowsNBH2026
+  type: misc
+  category: conference
+  title: Neural Signatures Help Resolve Individual Differences Using Task fMRI in the ABCD Study
+  authors:
+  - first: Anthony
+    last: Barrows
+  - first: David A. A.
+    last: Baranger
+  - first: Sahithi
+    last: Arekatla
+  - first: Shannon
+    last: O'Connor
+  - first: Nicholas
+    last: Allgaier
+  - first: Hugh
+    last: Garavan
+  year: 2026
+  month: 2
+  journal: University of Vermont 2026 Annual Neuroscience, Research, and Behavior Forum (Poster Presentation)
+  featured: false
+- key: BaKl25
+  type: article
+  category: peer-reviewed
+  title: 'Smoking Reduction Trajectories and Their Association with Smoking Cessation: A Secondary Analysis of Longitudinal
+    Clinical Trial Data'
+  authors:
+  - first: Anthony
+    last: Barrows
+  - first: Elias
+    last: Klemperer
+  - first: Hugh
+    last: Garavan
+  - first: Nicholas
+    last: Allgaier
+  - first: Nicola
+    last: Lindson
+  - first: Gemma
+    last: Taylor
+  year: 2025
+  month: 7
+  journal: BMJ Public Health
+  volume: '3'
+  number: '2'
+  pages: e001605
+  doi: 10.1136/bmjph-2024-001605
+  featured: true
+  image: /assets/images/figures/BaKl25.jpg
+- key: BarrowsFlux2025
+  type: misc
+  category: conference
+  title: Leveraging Propensity Score Matching to Test Cannabis Exposure Effects in the ABCD Cohort
+  authors:
+  - first: Anthony
+    last: Barrows
+  - first: Hugh
+    last: Garavan
+  - first: Alexandra
+    last: Potter
+  - first: Nicholas
+    last: Allgaier
+  - first: Matthew
+    last: Albaugh
+  year: 2025
+  month: 9
+  journal: Flux Society Congress 2025, Dublin, Ireland (Poster Presentation)
+  featured: false
+- key: BarrowsSRNT2024
+  type: misc
+  category: conference
+  title: Smoking Reduction Trajectories and their Association with Smoking Cessation
+  authors:
+  - first: Anthony
+    last: Barrows
+  - first: Elias
+    last: Klemperer
+  - first: Hugh
+    last: Garavan
+  - first: Nicholas
+    last: Allgaier
+  - first: Nicola
+    last: Lindson
+  - first: Gemma
+    last: Taylor
+  year: 2024
+  month: 3
+  journal: Society for Research on Nicotine and Tobacco 2024 Annual Meeting (Poster Presentation)
+  featured: false
+- key: BaPe23
+  type: misc
+  category: conference
+  title: Longitudinal task activation differences for the MID task in the ABCD Study (Poster Presentation)
+  authors:
+  - first: A. J.
+    last: Barrows
+  - first: E.
+    last: Pearson
+  - first: B.
+    last: Chaarani
+  - first: H.
+    last: Garavan
+  - first: N.
+    last: Allgaier
+  year: 2023
+  journal: Organization for Human Brain Mapping 2023 Annual Meeting
+  featured: false
+- key: Ba23
+  type: misc
+  category: conference
+  title: Improving Brain-Behavior Associations by Strengthening Models of Behavior (Talk)
+  authors:
+  - first: A. J.
+    last: Barrows
+  year: 2023
+  journal: Adolescent Brain Cognitive Development (ABCD) Study 2023 Annual Meeting
+  featured: false
+- key: TaGa23
+  type: misc
+  category: conference
+  title: What can computational modeling reveal about the generality or specificity of neurocognitive risk factors for psychopathology?
+    (Panel Presentation)
+  authors:
+  - first: S.
+    last: Taylor
+  - first: H.
+    last: Garavan
+  - first: A.
+    last: Weigard
+  - first: N.
+    last: Ging-Jehli
+  - first: P.
+    last: Hitchcock
+  - first: A. J.
+    last: Barrows
+  year: 2023
+  journal: American College of Neuropsychopharmacology 2023 Annual Meeting
+  featured: false
+- key: WiOl21
+  type: article
+  category: peer-reviewed
+  title: The Impact of the Covid-19 Pandemic on Smoking Among Vulnerable Populations
+  authors:
+  - first: Rhiannon C.
+    last: Wiley
+  - first: Anthony C.
+    last: Oliver
+  - first: Miranda B.
+    last: Snow
+  - first: Janice Y.
+    last: Bunn
+  - first: A. J.
+    last: Barrows
+  - first: Jennifer W.
+    last: Tidey
+  - first: Dustin C.
+    last: Lee
+  - first: Stacey C.
+    last: Sigmon
+  - first: Diann E.
+    last: Gaalema
+  - first: Sarah H.
+    last: Heil
+  - first: Catherine
+    last: Markesich
+  - first: Andrea C.
+    last: Villanti
+  - first: Stephen T.
+    last: Higgins
+  year: 2022
+  journal: Nicotine & Tobacco Research
+  volume: '25'
+  number: '2'
+  doi: 10.1093/ntr/ntac135
+  featured: true
+  image: /assets/images/figures/WiOl22.jpg
+- key: HiTi20
+  type: article
+  category: peer-reviewed
+  title: Changes in Cigarette Consumption With Reduced Nicotine Content Cigarettes Among Smokers With Psychiatric Conditions
+    or Socioeconomic Disadvantage
+  authors:
+  - first: Stephen T.
+    last: Higgins
+  - first: Jennifer W.
+    last: Tidey
+  - first: Stacey C.
+    last: Sigmon
+  - first: Sarah H.
+    last: Heil
+  - first: Diann E.
+    last: Gaalema
+  - first: Dustin
+    last: Lee
+  - first: John R.
+    last: Hughes
+  - first: Andrea C.
+    last: Villanti
+  - first: Janice Y.
+    last: Bunn
+  - first: Danielle R.
+    last: Davis
+  - first: Cecilia L.
+    last: Bergeria
+  - first: Joanna M.
+    last: Streck
+  - first: Maria A.
+    last: Parker
+  - first: Mollie E.
+    last: Miller
+  - first: Michael
+    last: DeSarno
+  - first: Jeff S.
+    last: Priest
+  - first: Patricia
+    last: Cioe
+  - first: Douglas
+    last: MacLeod
+  - first: A. J.
+    last: Barrows
+  - first: Catherine
+    last: Markesich
+  - first: Roxanne F.
+    last: Harfmann
+  year: 2020
+  month: 10
+  journal: JAMA Network Open
+  volume: '3'
+  number: '10'
+  pages: e2019311--e2019311
+  doi: 10.1001/jamanetworkopen.2020.19311
+  featured: true
+  image: /assets/images/figures/HiTi20.jpg
+- key: NiBa20
+  type: article
+  category: peer-reviewed
+  title: Comparing Participant Estimated Demand Intensity on the Cigarette Purchase Task to Consumption when Usual-Brand Cigarettes
+    were Provided Free
+  authors:
+  - first: T D
+    last: Nighbor
+  - first: A. J.
+    last: Barrows
+  - first: J Y
+    last: Bunn
+  - first: M J
+    last: DeSarno
+  - first: A C
+    last: Oliver
+  - first: S R M
+    last: Coleman
+  - first: D R
+    last: Davis
+  - first: J M
+    last: Streck
+  - first: E N
+    last: Reed
+  - first: D D
+    last: Reed
+  - first: S T
+    last: Higgins
+  year: 2020
+  journal: Preventive Medicine
+  volume: '140'
+  doi: 10.1016/j.ypmed.2020.106221
+  featured: true
+  image: /assets/images/figures/TyAn20.jpg
+- key: WiOl20a
+  type: misc
+  category: conference
+  title: Smoking Behavior Among Vulnerable Populations in Response to the COVID-19 Pandemic (Abstract)
+  authors:
+  - first: R C
+    last: Wiley
+  - first: A C
+    last: Oliver
+  - first: M B
+    last: Snow
+  - first: J Y
+    last: Bunn
+  - first: A. J.
+    last: Barrows
+  - first: J W
+    last: Tidey
+  - first: D
+    last: Lee
+  - first: S
+    last: Sigmon
+  - first: D E
+    last: Gaalema
+  - first: S H
+    last: Heil
+  - first: C
+    last: Markesich
+  - first: A C
+    last: Villanti
+  - first: S T
+    last: Higgins
+  year: 2020
+  journal: 2020 Tobacco Centers of Regulatory Science Grantee Meeting
+  featured: false
+- key: WiOl20b
+  type: misc
+  category: conference
+  title: Urban and Rural Differences in Smoking Behavior Among Vulnerable Populations during the COVID-19 Pandemic (Poster
+    Presentation)
+  authors:
+  - first: R C
+    last: Wiley
+  - first: A C
+    last: Oliver
+  - first: J Y
+    last: Bunn
+  - first: A. J.
+    last: Barrows
+  - first: J W
+    last: Tidey
+  - first: D
+    last: Lee
+  - first: S
+    last: Sigmon
+  - first: D E
+    last: Gaalema
+  - first: S H
+    last: Heil
+  - first: C
+    last: Markesich
+  - first: A C
+    last: Villanti
+  - first: S T
+    last: Higgins
+  year: 2020
+  journal: 2020 Vermont Center on Behavior and Health Conference
+  featured: false
+- key: PaSt18
+  type: article
+  category: peer-reviewed
+  title: Reduced Nicotine Content Cigarettes and Cannabis Use in Vulnerable Populations
+  authors:
+  - first: M A
+    last: Parker
+  - first: J M
+    last: Streck
+  - first: C L
+    last: Bergeria
+  - first: J Y
+    last: Bunn
+  - first: D E
+    last: Gaalema
+  - first: D R
+    last: Davis
+  - first: A. J.
+    last: Barrows
+  - first: S C
+    last: Sigmon
+  - first: J W
+    last: Tidey
+  - first: S H
+    last: Heil
+  - first: S T
+    last: Higgins
+  year: 2018
+  journal: Tobacco Regulatory Science
+  volume: '4'
+  number: '5'
+  pages: 91--94
+  doi: 10.18001/TRS.4.5.8
+  featured: true
+  image: /assets/images/figures/PaSt18.jpg
+- key: StSi17
+  type: misc
+  category: conference
+  title: Subjective effects of smoking among opioid-maintained individuals - Results from a trial examining reduced nicotine
+    content cigarettes (Abstract)
+  authors:
+  - first: J M
+    last: Streck
+  - first: S C
+    last: Sigmon
+  - first: M A
+    last: Parker
+  - first: M L
+    last: Stitzer
+  - first: S H
+    last: Heil
+  - first: J W
+    last: Tidey
+  - first: D E
+    last: Gaalema
+  - first: C L
+    last: Bergeria
+  - first: D R
+    last: Davis
+  - first: J
+    last: Priest
+  - first: A. J.
+    last: Barrows
+  - first: M
+    last: Rothman
+  - first: J R
+    last: Hughes
+  - first: S T
+    last: Higgins
+  year: 2017
+  journal: The College on Problems of Drug Dependence 2018 Annual Meeting
+  featured: false
+- key: BaAn16
+  type: misc
+  category: conference
+  title: Personality Characteristics Associated with MMPI-2 L-Scale elevations (Poster Presentation)
+  authors:
+  - first: A. J.
+    last: Barrows
+  year: 2016
+  journal: 2016 Eastern Psychological Association Annual Meeting
+  featured: false

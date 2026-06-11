@@ -1,0 +1,255 @@
+%-------------------------
+% Resume in Latex
+% Author : Jake Gutierrez
+% Based off of: https://github.com/sb2nov/resume
+% License : MIT
+%------------------------
+
+\documentclass[letterpaper,11pt]{article}
+
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage[english]{babel}
+\usepackage{tabularx}
+\usepackage{xcolor}
+\usepackage{etaremune}
+\usepackage{bibentry}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\input{glyphtounicode}
+
+
+
+
+%----------FONT OPTIONS----------
+% sans-serif
+% \usepackage[sfdefault]{FiraSans}
+% \usepackage[sfdefault]{roboto}
+% \usepackage[sfdefault]{noto-sans}
+% \usepackage[default]{sourcesanspro}
+
+% serif
+% \usepackage{CormorantGaramond}
+% \usepackage{charter}
+
+% AJB additioins
+\colorlet{urlcolor}{blue!40!black}
+
+\hypersetup{colorlinks=true,
+	urlcolor=urlcolor}
+
+\pagestyle{fancy}
+\fancyhf{} % clear all header and footer fields
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+% Adjust margins
+\addtolength{\oddsidemargin}{-0.5in}
+\addtolength{\evensidemargin}{-0.5in}
+\addtolength{\textwidth}{1in}
+\addtolength{\topmargin}{-.5in}
+\addtolength{\textheight}{1.0in}
+
+\urlstyle{same}
+
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+% Sections formatting
+\titleformat{\section}{
+  \vspace{-4pt}\scshape\raggedright\large
+}{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
+
+% Ensure that generate pdf is machine readable/ATS parsable
+\pdfgentounicode=1
+
+%-------------------------
+% Custom commands
+\newcommand{\resumeItem}[1]{
+  \item\small{
+    {#1 \vspace{-2pt}}
+  }
+}
+
+\newcommand{\resumeSubheading}[4]{
+  \vspace{-2pt}\item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2 \\
+      \textit{\small#3} & \textit{\small #4} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeSubSubheading}[2]{
+    \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \textit{\small#1} & \textit{\small #2} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeProjectHeading}[2]{
+    \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \small#1 & #2 \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeSubItem}[1]{\resumeItem{#1}\vspace{-4pt}}
+
+\renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
+
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.15in, label={}]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
+
+%-------------------------------------------
+%%%%%%  RESUME STARTS HERE  %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\begin{document}
+
+%----------HEADING----------
+% \begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}r}
+%   \textbf{\href{http://sourabhbajaj.com/}{\Large Sourabh Bajaj}} & Email : \href{mailto:sourabh@sourabhbajaj.com}{sourabh@sourabhbajaj.com}\\
+%   \href{http://sourabhbajaj.com/}{http://www.sourabhbajaj.com} & Mobile : +1-123-456-7890 \\
+% \end{tabular*}
+
+\begin{center}
+    \textbf{\Huge \scshape Anthony J. Barrows} \\ \vspace{3pt}
+    \small (802) 839-8115 $|$ \href{mailto:ajbarrows@gmail.com}{ajbarrows@gmail.com} $|$ 
+    \href{https://linkedin.com/in/ajbarrows}{\textbf{linkedin}.com/in/ajbarrows} $|$ \href{https://github.com/ajbarrows}{\textbf{github}.com/ajbarrows}
+%    \href{https://github.com/...}{\underline{github.com/jake}}
+\end{center}
+
+
+%-----------EDUCATION-----------
+\section{Education}
+  \resumeSubHeadingListStart
+    \resumeSubheading
+      {\href{https://uvm.edu}{\textbf{The University of Vermont}}}{Burlington, VT}
+      {\href{https://vermontcomplexsystems.org/}{M.S. in Complex Systems and Data Science}}
+      {Aug. 2019-- May 2021}
+    \resumeSubheading
+      {\href{https://www.hartford.edu/}{\textbf{University of Hartford}}}{Hartford, CT}
+      {\href{https://www.hartford.edu/academics/schools-colleges/arts-sciences/academics/departments-and-centers/psychology/default.aspx}{B.A. in Psychology;} \href{https://www.hartford.edu/academics/schools-colleges/arts-sciences/academics/departments-and-centers/sociology-and-criminal-justice/default.aspx}{Minor in Criminal Justice}}
+      {Aug. 2013 -- May 2016}
+  \resumeSubHeadingListEnd
+
+
+%-----------EXPERIENCE-----------
+\section{Experience}
+  \resumeSubHeadingListStart
+	\resumeSubheading{\href{http://www.med.uvm.edu/behaviorandhealth/home}{Vermont Center on Behavior and Health}}
+	{Burlington, VT}{Research Data Analyst}{June 2021 -- Present}
+	     \resumeItemListStart
+	        \resumeItem{Independently developed automated clinical trial dashboards that eliminated time-consuming manual reports.}
+	        \resumeItem{Engineered data cleaning and transformation pipelines making trial data available for immediate use, reducing analysis delays. }
+	        \resumeItem{Produce analytical reports using open-source code making results transparent, reproducible, and accessible. }
+	        \resumeItem{Design, program, and maintain secure databases for storing sensitive information.}
+	        \resumeItem{Identify inefficiencies and implement solutions using automation to improve data collection methods.}
+	        \resumeItem{Collaborate with statisticians to manage and analyze data for publication, focusing on quality tables and figures.}
+			\resumeItem{Review study data to ensure compliance with research protocols, training staff on best practices.}
+	        \resumeItem{Coordinate with outside vendors to oversee the design and maintenance of digital data collection systems.}
+	        \resumeItem{Prepare time-sensitive reports for regulatory boards and funding agencies including IRBs, DSMBs, and Federal collaborators.}
+		\resumeItemListEnd
+	\resumeSubSubheading{Lead Research Assistant}{October 2018 -- June 2021}
+	     \resumeItemListStart
+	     	\resumeItem{Oversaw subject recruitment team, and implemented procedures to improve response and retention.}
+	     	\resumeItem{Coordinated with study principal investigators to assess clinical challenges and quickly find effective solutions.}
+	        \resumeItem{Trained research staff to conduct participant sessions and use specialized equipment.} 
+		\resumeItemListEnd
+	\resumeSubSubheading{Research Assistant}{October 2016 -- October 2018}
+		\resumeItemListStart
+			\resumeItem{Implemented NIDA/FDA grant-funded study on long term exposure to low nicotine cigarettes.}
+			\resumeItem{Independently coordinated physiological and psychological testing (e.g., breath and urine analysis, psychiatric inventory), distributing study product, compensating participants, and ensuring adherence to IRB, DSMB and NIH-NIDA guidelines.}
+		\resumeItemListEnd
+
+%    \resumeSubheading
+%      {Lead Research Assistant}{October 2018 -- Present}
+%      {\href{http://www.med.uvm.edu/behaviorandhealth/home}{Vermont Center on Behavior and Health}}
+%      {Burlington, VT}
+%      \resumeItemListStart
+%        \resumeItem{Develop and maintain interactive clinical trial reporting tools for investigator use.}
+%        \resumeItem{Design, program, and maintain secure databases for storing sensitive information.}
+%        \resumeItem{Collaborate with statisticians to manage and analyze data for presentations and publications.}
+%        \resumeItem{Develop analytical reports using tools like R Markdown with a focus on reproducible results.}
+%		\resumeItem{Review study data to ensure compliance with research protocols.}
+%        \resumeItem{Coordinate with outside vendors to oversee the design and maintenance of digital data collection systems}
+%        \resumeItem{Maintain clinical trial's participant-facing web page using Apache web server.}
+%      \resumeItemListEnd
+      
+% -----------Multiple Positions Heading-----------
+%    \resumeSubSubheading
+%     {Software Engineer I}{Oct 2014 - Sep 2016}
+%     \resumeItemListStart
+%        \resumeItem{Apache Beam}
+%     \resumeItemListEnd
+%-------------------------------------------
+
+%    \resumeSubheading
+%      {Research Assistant}{Oct. 2016 -- Oct. 2018}
+%      {\href{http://www.med.uvm.edu/behaviorandhealth/home}{Vermont Center on Behavior and Health}}{Burlington, VT}
+%      \resumeItemListStart
+%        \resumeItem{Implement NIDA/FDA grant-funded study on long term exposure to low nicotine cigarettes.}
+%        \resumeItem{Independently coordinate physiological and psychological testing (e.g., breath and urine analysis, psychiatric inventory), distributing study product, compensating participants, and ensuring adherence to IRB, DSMB and NIH-NIDA guidelines.}
+%        \resumeItem{Train research staff to conduct participant sessions and use specialized equipment.}
+%    \resumeItemListEnd
+
+
+  \resumeSubHeadingListEnd
+
+
+%-----------PROJECTS-----------
+\section{Projects}
+    \resumeSubHeadingListStart
+      \resumeProjectHeading
+          {\textbf{Enrollment Report} $|$ \emph{R, R Shiny, REDCap API, Linux CLI}}{\textit{\small January 2020 -- Present}}
+          \resumeItemListStart
+            \resumeItem{Create and maintain an interactive data dashboard for instantaneous and longitudinal clinical trial progress reporting.}
+            \resumeItem{Interface with multiple APIs and fundamentally different data sources to retrieve information.}
+            \resumeItem{Employ principles of tidy data to efficiently wrangle longitudinal sources for instantaneous aggregation.}
+            \resumeItem{Build filtering tools to allow for flexible, live data exploration, prompting new insight from advanced visualizations and summaries.}
+          \resumeItemListEnd
+    \resumeSubHeadingListEnd
+
+
+%-----------TECHNICAL SKILLS-----------
+\section{Technical Skills}
+\begin{itemize}[leftmargin=0.15in, label={}]
+	\small{\item{
+			\textbf{Languages}{: R, Python, \LaTeX, Markdown} \\
+			\textbf{Frameworks}{: R Shiny, R Markdown, Microsoft Access, Linux CLI, REDCap API} \\
+			\textbf{Developer Tools}{: R Studio, Jupyter, VS Code} \\
+			\textbf{Version Control}{: Git, GitHub} \\
+			\textbf{Libraries}{: tidyverse, ggplot2, randomLCA, Plotly, pandas, NumPy, Matplotlib, scikit-learn} \\
+			\textbf{Software}{: Microsoft Excel, REDCap (Project Design), Final Cut Pro}
+	}}
+\end{itemize}
+
+% ----------AFFILIATIONS------------------
+\section{Affiliations}
+	\resumeSubHeadingListStart
+		\resumeSubheading{\href{https://www.jazzinthemountains.com/}{BDI Enterprises, LLC}
+		}
+		{East Montpelier, VT}
+		{Founder, Limited Partner}{Oct. 2020 -- Present}
+		\resumeItemListStart
+		    \resumeItem{Organize educational jazz summer camps for adult musicians.}
+		    \resumeItem{Maintain business website, produce promotional videos and recordings.}
+		\resumeItemListEnd
+	\resumeSubHeadingListEnd
+	
+
+%
+
+
+\end{document}
