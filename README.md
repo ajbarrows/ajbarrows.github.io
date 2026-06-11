@@ -8,11 +8,17 @@ This repository contains three things:
 
 ---
 
-## Publications
+## CV Content
 
-`publications.yaml` drives both the website and the CV. Neither derived file (`bibliography.bib`, the website's papers page) should be edited by hand.
+Three YAML files at the repo root are the single source of truth for all CV content. Neither derived files (`bibliography.bib`, `education_rows.tex`, `experience_rows.tex`) nor the website should be edited by hand.
 
-### Setup
+| File | Contents | Drives |
+|---|---|---|
+| `publications.yaml` | Papers, talks, abstracts | website `/work` · `bibliography.bib` · `ajb_cv.tex` pub sections |
+| `education.yaml` | Degrees | website `/work` · `cv_resume/cv/education_rows.tex` |
+| `experience.yaml` | Positions | website `/work` · `cv_resume/cv/experience_rows.tex` |
+
+### pubman Setup
 
 Install [pubman](https://github.com/ajbarrows/pubman) as a uv tool:
 
@@ -46,13 +52,13 @@ pubman --doi 10.xxxx/... --category invited-talk
 
 Running any of the above automatically:
 - adds an entry to `publications.yaml`
-- regenerates `cv_resume/cv/bibliography.bib`
-- inserts a `\pubentry` line into `cv_resume/cv/ajb_cv.tex`
-- rebuilds `cv_resume/cv/ajb_cv.pdf`
+- regenerates `bibliography.bib`, `education_rows.tex`, `experience_rows.tex`
+- inserts a `\pubentry` line into `ajb_cv.tex`
+- rebuilds `ajb_cv.pdf` and copies it to `ajbarrows.github.io/public/assets/`
 
 The website picks up the new entry on the next build (push to `main` triggers GitHub Actions).
 
-### After adding
+### After adding a paper
 
 For papers that should display a figure, place the image at:
 ```
@@ -62,15 +68,15 @@ figures/{key}.jpg
 Both the website and CV pull from this directory via symlinks (`cv_resume/cv/pubfigures` and `ajbarrows.github.io/public/assets/images/figures` both point here).
 Then set `featured: true` and `image: /assets/images/figures/{key}.jpg` in `publications.yaml`.
 
-### Editing the YAML directly
+### Editing YAML directly
 
-Edit `publications.yaml` by hand to fix a title, update an image path, etc. Then regenerate all derived files (BibTeX, CV PDF):
+Edit any YAML file by hand, then regenerate all derived files:
 
 ```bash
 pubman --regenerate
 ```
 
-Note: removing an entry also requires manually removing its `\pubentry` (and `\pubgraphic` if peer-reviewed) from `ajb_cv.tex`.
+Note: removing a publication also requires manually removing its `\pubentry` (and `\pubgraphic` if peer-reviewed) from `ajb_cv.tex`.
 
 ### Key fields
 

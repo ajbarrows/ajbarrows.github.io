@@ -8,7 +8,7 @@ my_last_name = "Barrows"
 [cv]
 tex = "cv_resume/cv/ajb_cv.tex"
 figures_dir = "figures"
-build_cmd = "pdflatex -interaction=nonstopmode ajb_cv.tex && bibtex ajb_cv && pdflatex -interaction=nonstopmode ajb_cv.tex && pdflatex -interaction=nonstopmode ajb_cv.tex"
+build_cmd = "pdflatex -interaction=nonstopmode ajb_cv.tex && bibtex ajb_cv && pdflatex -interaction=nonstopmode ajb_cv.tex && pdflatex -interaction=nonstopmode ajb_cv.tex && cp ajb_cv.pdf ../../ajbarrows.github.io/public/assets/ajb_cv.pdf"
 
 [cv.section_map]
 peer-reviewed = "Publications"
@@ -16,5 +16,17 @@ invited-talk = "Invited Talks"
 selected-talk = "Selected Talks"
 conference = "Abstracts"
 
-# Website reads publications.yaml directly at build time via
-# ajbarrows.github.io/src/utils/getPublications.ts — no generator needed.
+# Website reads publications.yaml, education.yaml, and experience.yaml directly
+# at build time — no generators needed for those.
+
+[[generators]]
+name = "education-tex"
+module = "pubman.generators.education"
+output = "cv_resume/cv/education_rows.tex"
+source_yaml = "education.yaml"
+
+[[generators]]
+name = "experience-tex"
+module = "pubman.generators.experience"
+output = "cv_resume/cv/experience_rows.tex"
+source_yaml = "experience.yaml"
