@@ -1,124 +1,29 @@
-# Multiple Page Portfolio
+# ajbarrows.github.io
 
-A modern, responsive portfolio website built with Astro, featuring multiple pages including a blog system, projects showcase, and about page.
+Personal portfolio and academic website. Built with Astro, deployed to GitHub Pages on push to `main`.
 
-## Quick Deploy
-
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/tomcomtang/astro-multiplepage-portfolio&project-name=astro-multiplepage-portfolio&repository-name=astro-multiplepage-portfolio)
-
-## Preview
-
-You can preview the project online at:
-
-<https://astro-multiplepage-portfolio-blush.vercel.app/>
-
-## Features
-
-- 🎨 Modern and clean design with dark/light mode support
-- 📱 Fully responsive layout
-- 📝 Blog system with Markdown support
-- 🚀 Project showcase
-- 🔍 Pagination for blog posts
-- 🎯 SEO optimized
-- 🌙 Dark/Light theme toggle
-- 📦 Static site generation
-
-## Tech Stack
-
-- **Framework**: Astro 5.x
-- **Styling**: Tailwind CSS
-- **Content**: Markdown with Astro Content Collections
-- **Syntax Highlighting**: Tailwind Typography plugin
-- **Language**: TypeScript
-- **Build Tool**: Vite
-
-## Getting Started
-
-1. Clone the repository:
+## Development
 
 ```bash
-git clone https://github.com/tomcomtang/astro-multiplepage-portfolio.git
+npm run dev      # dev server at localhost:4321
+npm run build    # build to dist/
+npm run preview  # preview production build
 ```
 
-2. Install dependencies:
+## Content
 
-```bash
-npm install
-```
+Most page content lives in `src/config/` — edit these files rather than the `.astro` pages directly:
 
-3. Run the development server:
+- `content.ts` — site metadata, home/about copy, experience timeline, projects, social links
+- `events.ts` — music event schedule
 
-```bash
-npm run dev
-```
+**Publications** are driven by `../publications.yaml` at the portfolio root. See the [portfolio README](../README.md) for the workflow.
 
-4. Build for production:
+Blog posts are Markdown files in `src/content/posts/` with YAML frontmatter.
 
-```bash
-npm run build
-```
+## Architecture
 
-## Project Structure
-
-```
-├── src/
-│   ├── components/         # Reusable components
-│   ├── config/            # Configuration files
-│   ├── content/           # Markdown blog posts
-│   └── pages/             # Astro pages
-└── public/                # Static assets
-```
-
-## Content Management
-
-### Blog Posts
-
-1. Create your markdown files in `src/content/posts/` directory
-2. Each markdown file should follow this format:
-
-```markdown
----
-title: Your Post Title
-description: A brief description of your post
-date: 2024-03-21
-readTime: 5 min
----
-
-Your post content here...
-```
-
-### Page Content
-
-You can customize the content of different pages by modifying `src/config/content.ts`:
-
-- Site metadata and social links
-- Home page content
-- About page content
-- Projects showcase
-
-## Blog System
-
-The blog system supports:
-
-- Markdown content
-- Code syntax highlighting
-- Reading time estimation
-- Pagination
-
-## Customization
-
-1. Add new blog posts by creating Markdown files in the `src/content/posts` directory
-2. Update project information in `src/config/content.ts`
-3. Modify site configuration in `src/config/content.ts`
-
-## License
-
-MIT
-
-## Author
-
-tomcomtang
-
-## About
-
-A personal blog theme template that includes automatic recognition of Markdown content and generates configuration accordingly.
+- **Framework**: Astro 5.x, static output
+- **Styling**: Tailwind CSS 3.4 with Typography plugin; dark mode via `class` strategy
+- **Routing**: file-based from `src/pages/`; blog posts use `src/pages/posts/[slug].astro`
+- **Citations**: fetched live from Semantic Scholar API at build time via DOI
