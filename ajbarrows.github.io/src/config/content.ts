@@ -44,7 +44,7 @@ export const aboutContent = {
     "Machine Learning",
     "Cognitive Modeling",
     "Statistical Inference",
-    "Neuroscience",
+    "Open Source Development",
     "Public Health",
     "Git",
   ],
