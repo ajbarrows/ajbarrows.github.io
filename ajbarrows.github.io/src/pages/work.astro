@@ -56,6 +56,38 @@ const papersWithCitations = papers.map((paper, i) => ({
       <a href="/assets/ajb_cv.pdf" download>Download CV</a>
     </p>
 
+    <h2>Education</h2>
+    <ul class="experience-list">
+      {education.map((item) => (
+        <li>
+          <p class="exp-period">{item.period}</p>
+          <p class="exp-position">
+            {item.institution_url
+              ? <><strong>{item.degree}</strong>, <a href={item.institution_url} target="_blank" rel="noopener">{item.institution}</a>{item.location ? `, ${item.location}` : ""}</>
+              : <><strong>{item.degree}</strong>, {item.institution}{item.location ? `, ${item.location}` : ""}</>
+            }
+          </p>
+          {item.thesis && <p class="exp-desc"><em>Thesis: {item.thesis}</em></p>}
+        </li>
+      ))}
+    </ul>
+
+    <h2>Experience</h2>
+    <ul class="experience-list">
+      {experience.map((item) => (
+        <li>
+          <p class="exp-period">{item.period}</p>
+          <p class="exp-position">
+            {item.organization_url
+              ? <><strong>{item.position}</strong>, <a href={item.organization_url} target="_blank" rel="noopener">{item.organization}</a></>
+              : <><strong>{item.position}</strong>, {item.organization}</>
+            }
+          </p>
+          {item.description && <p class="exp-desc">{item.description}</p>}
+        </li>
+      ))}
+    </ul>
+
     <h2>Papers</h2>
 
     <p>
@@ -92,38 +124,6 @@ const papersWithCitations = papers.map((paper, i) => ({
         );
       })}
     </ol>
-
-    <h2>Experience</h2>
-    <ul class="experience-list">
-      {experience.map((item) => (
-        <li>
-          <p class="exp-period">{item.period}</p>
-          <p class="exp-position">
-            {item.organization_url
-              ? <><strong>{item.position}</strong>, <a href={item.organization_url} target="_blank" rel="noopener">{item.organization}</a></>
-              : <><strong>{item.position}</strong>, {item.organization}</>
-            }
-          </p>
-          {item.description && <p class="exp-desc">{item.description}</p>}
-        </li>
-      ))}
-    </ul>
-
-    <h2>Education</h2>
-    <ul class="experience-list">
-      {education.map((item) => (
-        <li>
-          <p class="exp-period">{item.period}</p>
-          <p class="exp-position">
-            {item.institution_url
-              ? <><strong>{item.degree}</strong>, <a href={item.institution_url} target="_blank" rel="noopener">{item.institution}</a>{item.location ? `, ${item.location}` : ""}</>
-              : <><strong>{item.degree}</strong>, {item.institution}{item.location ? `, ${item.location}` : ""}</>
-            }
-          </p>
-          {item.thesis && <p class="exp-desc"><em>Thesis: {item.thesis}</em></p>}
-        </li>
-      ))}
-    </ul>
   </main>
   <Footer />
 </Layout>

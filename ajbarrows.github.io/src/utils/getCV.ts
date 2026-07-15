@@ -9,6 +9,7 @@ export interface EducationEntry {
   location?: string;
   period: string;
   thesis?: string;
+  website?: boolean;
 }
 
 export interface ExperienceEntry {
@@ -18,14 +19,17 @@ export interface ExperienceEntry {
   period: string;
   group?: string;
   description?: string;
+  website?: boolean;
 }
 
 export function getEducation(): EducationEntry[] {
   const raw = readFileSync(resolve(process.cwd(), "../education.yaml"), "utf-8");
-  return yaml.load(raw) as EducationEntry[];
+  const all = yaml.load(raw) as EducationEntry[];
+  return all.filter((e) => e.website !== false);
 }
 
 export function getExperience(): ExperienceEntry[] {
   const raw = readFileSync(resolve(process.cwd(), "../experience.yaml"), "utf-8");
-  return yaml.load(raw) as ExperienceEntry[];
+  const all = yaml.load(raw) as ExperienceEntry[];
+  return all.filter((e) => e.website !== false);
 }

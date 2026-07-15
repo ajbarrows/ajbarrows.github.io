@@ -3,35 +3,42 @@
   organization_url: https://www.abcd-repronim.org
   period: "2025–2026"
   group: service
+  website: false
 
 - position: Writing Consultant
   organization: Graduate Writing Center
   organization_url: https://www.uvm.edu/gradwriting
   period: "2023–Present"
   group: service
+  website: false
 
 - position: Program Representative
   organization: Graduate Student Senate
   organization_url: https://www.uvm.edu/gss
   period: "2023–2024"
   group: service
+  website: false
+
+- position: NIH T32 Predoctoral Fellow
+  organization: Neuroimaging REsearch VErmont (NERVE) Lab
+  organization_url: https://nervelab.w3.uvm.edu
+  period: "2022–Present"
+  group: research
 
 - position: Research Data Analyst
   organization: Vermont Center on Behavior and Health
   organization_url: http://www.med.uvm.edu/behaviorandhealth/home
   period: "2021–2022"
   group: research
-  description: "Clinical trial progress reporting and forecasting; open-source data management."
 
-- position: Lead Research Assistant
-  organization: Vermont Center on Behavior and Health
-  organization_url: http://www.med.uvm.edu/behaviorandhealth/home
-  period: "2019–2021"
-  group: research
+# - position: Lead Research Assistant
+#   organization: Vermont Center on Behavior and Health
+#   organization_url: http://www.med.uvm.edu/behaviorandhealth/home
+#   period: "2019–2021"
+#   group: research
 
 - position: Research Assistant
   organization: Vermont Center on Behavior and Health
   organization_url: http://www.med.uvm.edu/behaviorandhealth/home
-  period: "2016–2019"
+  period: "2016–2021"
   group: research
-  description: "Longitudinal clinical trial data analysis in tobacco regulatory science and public health."
