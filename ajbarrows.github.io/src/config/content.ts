@@ -56,7 +56,7 @@ export const aboutContent = {
     title: "Research",
     items: [
       {
-        period: "2022 - Present",
+        period: "2022 - 2026",
         position: "PhD Student",
         company: "University of Vermont",
         description:
