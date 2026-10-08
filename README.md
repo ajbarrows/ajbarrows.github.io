@@ -100,6 +100,7 @@ npm run build    # build to dist/
 Content lives in `ajbarrows.github.io/src/config/`:
 - `content.ts` — home, about, projects, music pages
 - `events.ts` — music event schedule
+- `recordings.ts` — music videos and recordings
 
 The papers page reads `publications.yaml` directly at build time — no intermediate file needed.
 Pushing to `main` triggers a GitHub Actions deploy to GitHub Pages.

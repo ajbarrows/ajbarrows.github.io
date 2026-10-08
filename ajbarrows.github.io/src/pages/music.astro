@@ -4,6 +4,7 @@ import Navigation from "../components/Navigation.astro";
 import Footer from "../components/Footer.astro";
 import { musicContent } from "../config/content";
 import { events } from "../config/events";
+import { recordings } from "../config/recordings";
 import { Image } from "astro:assets";
 
 const galleryImages = Object.values(
@@ -20,6 +21,28 @@ const upcoming = events
 const past = events
   .filter((e) => new Date(e.date + "T00:00:00") < today)
   .sort((a, b) => b.date.localeCompare(a.date));
+
+const PLATFORMS: Record<string, string> = {
+  "youtube.com": "YouTube",
+  "youtu.be": "YouTube",
+  "vimeo.com": "Vimeo",
+  "bandcamp.com": "Bandcamp",
+  "soundcloud.com": "SoundCloud",
+  "spotify.com": "Spotify",
+  "music.apple.com": "Apple Music",
+  "instagram.com": "Instagram",
+  "facebook.com": "Facebook",
+};
+
+function platformName(href: string) {
+  const host = new URL(href).hostname.replace(/^www\./, "");
+  const match = Object.keys(PLATFORMS).find((d) => host === d || host.endsWith("." + d));
+  return match ? PLATFORMS[match] : host;
+}
+
+const sortedRecordings = [...recordings].sort((a, b) =>
+  (b.date ?? "").localeCompare(a.date ?? "")
+);
 
 function formatDate(iso: string) {
   return new Date(iso + "T00:00:00").toLocaleDateString("en-US", {
@@ -84,6 +107,26 @@ function formatDate(iso: string) {
             )}
           </tbody>
         </table>
+      </section>
+    )}
+
+    {sortedRecordings.length > 0 && (
+      <section>
+        <h2>Recordings</h2>
+        <ul class="experience-list">
+          {sortedRecordings.map((rec) => (
+            <li>
+              <p class="exp-period">
+                {rec.platform ?? platformName(rec.href)}
+                {rec.date && <> · <time>{formatDate(rec.date)}</time></>}
+              </p>
+              <p class="exp-position">
+                <a href={rec.href} target="_blank" rel="noopener noreferrer">{rec.title}</a>
+              </p>
+              {rec.description && <p class="exp-desc">{rec.description}</p>}
+            </li>
+          ))}
+        </ul>
       </section>
     )}
 

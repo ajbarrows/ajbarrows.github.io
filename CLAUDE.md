@@ -35,6 +35,7 @@ Most page content is not in the `.astro` files themselves — it lives in `src/c
 - `content.ts` — Site metadata, home/about page copy, experience timeline, projects list, social links
 - `papers.ts` — Research publications with DOIs, figure images, and Semantic Scholar IDs for live citation counts
 - `events.ts` — Music event schedule
+- `recordings.ts` — Music videos and recordings (links to streaming platforms)
 
 To add or update content (bio, publications, experience, projects), edit these config files rather than touching pages directly.
 
