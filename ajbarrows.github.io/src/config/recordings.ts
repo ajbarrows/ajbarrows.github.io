@@ -24,6 +24,7 @@ export const recordings: Recording[] = [
   {
     title: "Die Walküre Act 1 and The Ride of the Valkyries",
     href: "https://s3.amazonaws.com/lcatv-lqm/GMMF11042316.mp4",
+    platform: "Video",
     date: "2023-11-04",
     description: "Green Mountain Mahler Festival Orchestra -- Bass Clarinet, Clarinet"
   }
