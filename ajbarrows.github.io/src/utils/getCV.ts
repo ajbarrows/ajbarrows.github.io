@@ -9,6 +9,7 @@ export interface EducationEntry {
   location?: string;
   period: string;
   thesis?: string;
+  thesis_label?: string;
   website?: boolean;
 }
 

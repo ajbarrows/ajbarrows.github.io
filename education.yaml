@@ -3,6 +3,7 @@
   institution_url: https://vermontcomplexsystems.org/
   location: Burlington, Vermont
   period: "2022–2026"
+  thesis_label: Dissertation
   thesis: "Beyond mass univariate analyses in neuroimaging: Multivariate and multifaceted approaches to connecting brain and behavior in adolescence"
 
 - degree: MS in Complex Systems and Data Science
@@ -16,4 +17,5 @@
   institution_url: https://www.hartford.edu/
   location: Hartford, Connecticut
   period: "2013–2016"
+  thesis_label: Honors Thesis
   thesis: "Characteristics Associated with MMPI-2 L-scale Elevations in a Sample of Police Officer Candidates"

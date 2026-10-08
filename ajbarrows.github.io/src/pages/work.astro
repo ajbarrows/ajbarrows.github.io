@@ -67,7 +67,7 @@ const papersWithCitations = papers.map((paper, i) => ({
               : <><strong>{item.degree}</strong>, {item.institution}{item.location ? `, ${item.location}` : ""}</>
             }
           </p>
-          {item.thesis && <p class="exp-desc"><em>Thesis: {item.thesis}</em></p>}
+          {item.thesis && <p class="exp-desc"><em>{item.thesis_label ?? "Thesis"}: {item.thesis}</em></p>}
         </li>
       ))}
     </ul>
