@@ -33,3 +33,6 @@ dist/
 *.fdb_latexmk
 *.synctex.gz
 texput.log
+
+# Claude Code local settings
+.claude/
