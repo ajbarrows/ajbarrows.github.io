@@ -45,6 +45,6 @@ Astro uses file-based routing from `src/pages/`. Blog posts are Markdown files i
 
 ### Key Behaviors
 
-- `papers.astro` fetches live citation counts from the Semantic Scholar API at build time
+- `work.astro` fetches live citation counts from the OpenAlex API at build time (by DOI, from `../publications.yaml`)
 - The Navigation component handles the dark/light theme toggle and persists preference to localStorage
 - Static assets go in `public/`; optimized images go in `src/assets/images/`

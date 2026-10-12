@@ -19,20 +19,22 @@ const citationCounts: Record<string, number> = {};
 
 if (validDois.length > 0) {
   try {
+    // OpenAlex returns DOIs lowercased as full URLs, so match case-insensitively
+    const filter = validDois.map(encodeURIComponent).join("|");
     const res = await fetch(
-      "https://api.semanticscholar.org/graph/v1/paper/batch?fields=citationCount",
-      {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ ids: validDois.map((doi) => `DOI:${doi}`) }),
-      }
+      `https://api.openalex.org/works?filter=doi:${filter}&per-page=50&select=doi,cited_by_count&mailto=anthony.barrows@uvm.edu`
     );
     if (res.ok) {
       const data = await res.json();
-      data.forEach((item: { citationCount?: number } | null, i: number) => {
-        if (item?.citationCount != null) {
-          citationCounts[validDois[i]] = item.citationCount;
+      const byDoi = new Map<string, number>();
+      data.results.forEach((item: { doi?: string; cited_by_count?: number }) => {
+        if (item.doi && item.cited_by_count != null) {
+          byDoi.set(item.doi.replace(/^https?:\/\/doi\.org\//, "").toLowerCase(), item.cited_by_count);
         }
+      });
+      validDois.forEach((doi) => {
+        const count = byDoi.get(doi.toLowerCase());
+        if (count != null) citationCounts[doi] = count;
       });
     }
   } catch {
