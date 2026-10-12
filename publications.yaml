@@ -1,3 +1,37 @@
+- key: ArBa26
+  type: article
+  category: peer-reviewed
+  title: 'Longitudinal associations between screen time activities and working memory neural signatures in adolescents: Sex
+    differences and contextual moderation'
+  authors:
+  - first: Sahithi
+    last: Arekatla
+  - first: Anthony
+    last: Barrows
+  - first: Leigh-Anne
+    last: Cioffredi
+  - first: Matthew D.
+    last: Albaugh
+  - first: Nicholas
+    last: Allgaier
+  - first: Mckay
+    last: Allred
+  - first: David
+    last: Baranger
+  - first: Alexandra
+    last: Potter
+  - first: Hugh P.
+    last: Garavan
+  - first: Bader
+    last: Chaarani
+  year: 2026
+  featured: true
+  image: /assets/images/figures/ArBa26.jpg
+  month: 12
+  journal: Developmental Cognitive Neuroscience
+  volume: '82'
+  pages: '101836'
+  doi: 10.1016/j.dcn.2026.101836
 - key: BaWe26
   type: article
   category: peer-reviewed
