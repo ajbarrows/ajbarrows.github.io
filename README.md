@@ -65,6 +65,8 @@ For papers that should display a figure, place the image at:
 figures/{key}.jpg
 ```
 
+Peer-reviewed entries get a `\pubgraphic{key}` in the CV, so the CV build needs this file. If it's missing, pubman pauses before compiling, prints the exact path, and waits: drop the figure in and press Enter to resume, or `s` to skip the build and run `pubman --regenerate` later.
+
 Both the website and CV pull from this directory via symlinks (`cv_resume/cv/pubfigures` and `ajbarrows.github.io/public/assets/images/figures` both point here).
 Then set `featured: true` and `image: /assets/images/figures/{key}.jpg` in `publications.yaml`.
 
@@ -86,6 +88,16 @@ Note: removing a publication also requires manually removing its `\pubentry` (an
 | `category` | Controls which CV section the entry appears in |
 | `featured` | `true` to show on the website papers page (default for peer-reviewed) |
 | `image` | Website figure path (e.g. `/assets/images/figures/BaWe26.jpg`) |
+
+---
+
+## Rebuild & deploy
+
+```bash
+./rebuild.sh
+```
+
+Regenerates and compiles the CV (`pubman --regenerate`), builds the website, then offers to commit any changes and asks for confirmation before `git push` (which deploys). Stops early if the CV or website build fails.
 
 ---
 

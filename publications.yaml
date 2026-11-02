@@ -1,3 +1,31 @@
+- key: MoCi26
+  type: article
+  category: peer-reviewed
+  title: Early Infant Subcortical Volume is Associated with Maternal Prenatal Depression
+  authors:
+  - first: Hannah L.
+    last: Morgan
+  - first: Leigh-Anne
+    last: Cioffredi
+  - first: Nadia
+    last: Scoppettone
+  - first: Anthony J.
+    last: Barrows
+  - first: Nicole E.
+    last: Lorenzo
+  - first: Jiming
+    last: Zhang
+  - first: Hugh
+    last: Garavan
+  - first: Alexandra
+    last: Potter
+  year: 2026
+  featured: true
+  image: /assets/images/figures/MoCi26.jpg
+  month: 10
+  journal: Biological Psychiatry Global Open Science
+  pages: '100859'
+  doi: 10.1016/j.bpsgos.2026.100859
 - key: ArBa26
   type: article
   category: peer-reviewed
