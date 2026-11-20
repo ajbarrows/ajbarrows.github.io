@@ -16,6 +16,20 @@ export const events: MusicEvent[] = [
   //   href: "https://www.flynncenter.org",
   // },
     {
+      date: "2026-12-12",
+      title: "Slaphappy Santa Christmas Spectacular",
+      venue: "Big Picture Theater & Cafe",
+      location: "Waitsfield, VT",
+      href: "https://www.bigpicturetheater.info/event-details/slaphappy-santa-christmas-spectacular"
+    },
+    {
+      date: "2026-12-4",
+      title: "Slaphappy Santa Christmas Spectacular",
+      venue: "Montpelier Performing Arts Hub, Gary Library",
+      location: "Montpelier, VT",
+      href: "https://www.mpa-hub.org/events/slaphappy-santa-2025-tnppw"
+    },
+    {
       date: "2026-11-15",
       title: "Montpelier Chamber Orchestra",
       venue: "Lost Nation Theater",

@@ -19,6 +19,12 @@
   group: service
   website: false
 
+- position: Postdoctoral Associate
+  organization: Department of Psychiatry, University of Vermont
+  organization_url: https://www.med.uvm.edu/psychiatry
+  period: "2026–present"
+  group: research
+
 - position: NIH T32 Predoctoral Fellow
   organization: Neuroimaging REsearch VErmont (NERVE) Lab
   organization_url: https://nervelab.w3.uvm.edu
