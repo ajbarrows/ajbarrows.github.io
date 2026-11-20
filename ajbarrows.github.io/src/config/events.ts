@@ -17,14 +17,14 @@ export const events: MusicEvent[] = [
   // },
     {
       date: "2026-12-12",
-      title: "Slaphappy Santa Christmas Spectacular",
+      title: "Slaphappy Santa Christmas Spectacular - Waitsfield",
       venue: "Big Picture Theater & Cafe",
       location: "Waitsfield, VT",
       href: "https://www.bigpicturetheater.info/event-details/slaphappy-santa-christmas-spectacular"
     },
     {
       date: "2026-12-4",
-      title: "Slaphappy Santa Christmas Spectacular",
+      title: "Slaphappy Santa Christmas Spectacular - Montpelier",
       venue: "Montpelier Performing Arts Hub, Gary Library",
       location: "Montpelier, VT",
       href: "https://www.mpa-hub.org/events/slaphappy-santa-2025-tnppw"
